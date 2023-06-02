@@ -1,8 +1,7 @@
 import { combineReducers } from "redux";
-import apartReducer from "./apartReducer";
-
+import {festivalReducer} from "./festivalReducer"
 
 export default combineReducers({
-    apartMent : apartReducer,
+    festival : festivalReducer,
     
 });
