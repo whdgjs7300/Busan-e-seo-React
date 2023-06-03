@@ -8,7 +8,7 @@ function getFestival() {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const festivalApi = api.get(`/ServiceKey=${KEY}/pageNo=1/numOfRows=10/LAWD_CD=11110/DEAL_YMD=201512`)
+        const festivalApi = api.get(`?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json`)
 
 
         let [festivalList,] = await Promise.all([festivalApi,])

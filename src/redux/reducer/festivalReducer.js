@@ -1,5 +1,6 @@
 
 let initialState = {
+
     festivalList : {},
     loading : true,
     
