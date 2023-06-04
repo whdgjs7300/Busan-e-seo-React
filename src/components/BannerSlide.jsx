@@ -20,10 +20,7 @@ const BannerSlide = ({item}) => {
 
     return ( 
         <Slider {...settings}>
-            {
-                
-            }
-                
+            
             
         </Slider>
     );

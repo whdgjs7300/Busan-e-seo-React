@@ -4,6 +4,7 @@ import { festivalAction } from "../redux/actions/festivalAction";
 import BannerSlide from "../components/BannerSlide";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
+import { jsx } from '@emotion/react';
 
 const Home = () => {
 
