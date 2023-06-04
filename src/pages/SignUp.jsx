@@ -1,12 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { firebaseAuth , createUserWithEmailAndPassword } from "../firebase";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 
 
 
 
 const SignUp = () => {
-
+    const navigate = useNavigate();
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
     const [registerName, setRegisterName] = useState("");
@@ -21,6 +22,7 @@ const register = async () => {
         //console.log(createdUser);
         setRegisterEmail("");
         setRegisterPassword("");
+        navigate('/login')
         console.log(createdUser);
         } catch(err){
         //console.log(err.code);
@@ -48,8 +50,8 @@ const register = async () => {
                 <input type="password" onChange={ (e)=>{setRegisterPassword(e.target.value)}} />
                 <p>이름</p>
                 <input type="text" placeholder="이름" onChange={ (e)=>{setRegisterName(e.target.value)}} />
-                <input className="F_submit" type="submit" value="회원가입" />
-                <Link to="/login" className="F_signup_btn">로그인</Link>
+                <input type="submit" value="회원가입" />
+                
             </form>
         </div>
     );

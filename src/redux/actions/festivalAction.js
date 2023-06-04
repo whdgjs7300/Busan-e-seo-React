@@ -1,4 +1,4 @@
-import api from '../api';
+import axios from 'axios';
 
 const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D"
 
@@ -8,7 +8,7 @@ function getFestival() {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const festivalApi = api.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json`)
+        const festivalApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json`)
 
 
         let [festivalList,] = await Promise.all([festivalApi,])

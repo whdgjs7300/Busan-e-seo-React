@@ -5,11 +5,13 @@ import Home from './pages/Home';
 import Detail from './pages/Detail';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import HomeNav from './components/HomeNav';
 
 
 function App() {
   return (
     <div className="App">
+      <HomeNav/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/festivals:id' element={<Detail/>}></Route>
