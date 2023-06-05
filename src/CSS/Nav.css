@@ -1,0 +1,12 @@
+.nav {
+    display: flex;
+    justify-content: end;
+    padding: 4px 6px;
+}
+.nav-link {
+    color: black;
+    font-size: small;
+}
+.nav-link:hover {
+    color: black;
+}

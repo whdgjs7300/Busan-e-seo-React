@@ -1,5 +1,5 @@
 import Nav from 'react-bootstrap/Nav';
-
+import '../CSS/Nav.css';
 
 const HomeNav = () => {
 

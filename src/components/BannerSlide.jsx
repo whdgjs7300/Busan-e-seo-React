@@ -23,7 +23,7 @@ const BannerSlide = ({item}) => {
         <Slider {...settings}>
                 {
                     item.map((item)=>{
-                        return <div className="banner_container">
+                        return <div key={item} className="banner_container">
                             <Banner item={item}/>
                         </div>
                         
