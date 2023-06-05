@@ -4,7 +4,8 @@ const Banner = ({item}) => {
     return ( 
         <div className="banner"
         style={{backgroundImage:
-            'url('+``+')',
+            'url('+`${item.MAIN_IMG_NORMAL
+            }`+')',
             
             
             }}

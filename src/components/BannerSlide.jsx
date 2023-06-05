@@ -15,11 +15,22 @@ const BannerSlide = ({item}) => {
         autoplay: true,
         autoplaySpeed: 2000,
         pauseOnHover: true,
+        
     };
-
+    console.log(item)
 
     return ( 
         <Slider {...settings}>
+                {
+                    item.map((item)=>{
+                        return <div className="banner_container">
+                            <Banner item={item}/>
+                        </div>
+                        
+                    }) 
+                }
+                
+            
             
             
         </Slider>
