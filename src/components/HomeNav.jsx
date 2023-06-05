@@ -4,9 +4,18 @@ import '../CSS/Nav.css';
 const HomeNav = () => {
 
     return ( 
-        <Nav>
+        
+            <Nav style={{
+                display:"flex",
+                justifyContent : "flex-end",
+                width : "90%",
+                borderBottom : "1px solid #D3D3D3",
+                margin : "auto",
+                paddingBottom : "8px",
+                paddingTop: "4px"
+            }}>
             <Nav.Item>
-                <Nav.Link href='/'>Home</Nav.Link>
+                <Nav.Link href='/'>HOME</Nav.Link>
             </Nav.Item>
             <Nav.Item>
             <Nav.Link href='/login'>로그인</Nav.Link>
@@ -19,7 +28,11 @@ const HomeNav = () => {
                 Disabled
             </Nav.Link>
             </Nav.Item>
+            
         </Nav>
+        
+        
+        
     );
 }
 
