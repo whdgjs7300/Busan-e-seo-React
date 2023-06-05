@@ -2,9 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { festivalAction } from "../redux/actions/festivalAction";
 import BannerSlide from "../components/BannerSlide";
-import { css } from "@emotion/core";
-import ClipLoader from "react-spinners/ClipLoader";
-import { jsx } from '@emotion/react';
+
 
 const Home = () => {
 
