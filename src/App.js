@@ -9,6 +9,7 @@ import HomeNav from './components/HomeNav';
 import Festivals from './pages/Festivals';
 import FestivalNav from './components/FestivalNav';
 import Restaurant from './pages/Restaurant';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
       </Routes>
+      <Footer/>
     </div>
   );
 }
