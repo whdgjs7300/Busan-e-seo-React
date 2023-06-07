@@ -1,7 +1,7 @@
 
 let initialState = {
 
-    RestaurantList : {},
+    restaurantList : {},
     loading : true,
     
 
@@ -10,15 +10,15 @@ let initialState = {
 function festivalReducer(state=initialState, action) {
     let {type, payload} = action
     switch(type) {
-        case "GET_FESTIVAL_SUCCESS" :
+        case "GET_RESTAURANT_SUCCESS" :
             return {...state, 
             loading: false,
-            festivalList : payload.festivalList,
+            restaurantList : payload.restaurantList,
     
             } 
-        case "GET_FESTIVAL_REQUEST" :
+        case "GET_RESTAURANT_REQUEST" :
             return {...state, loading : true}
-        case "GET_FESTIVAL_FAILURE" : 
+        case "GET_RESTAURANT_FAILURE" : 
             return {...state, loading : false}   
 
         default :
