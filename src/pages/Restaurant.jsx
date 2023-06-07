@@ -53,8 +53,15 @@ const Restaurant = () => {
             }
             </div>
 
-            <div>
-                <ResCard/>
+            <div className="card_Box">
+                {
+                    restaurantList.map((item,i)=>{
+                        return  <ResCard key={i} item={item} gu={gu}/>
+                        
+                        
+                    })
+                }
+                
             </div>
         </div>
 
