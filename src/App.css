@@ -37,3 +37,31 @@
     width: 100%;
     
 }
+
+/* Restaurant Page CSS */
+
+.gu_btn_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gu_btn_box div {
+    padding: 20px 24px;
+    color: white;
+    cursor: pointer;
+    margin: auto;
+    font-size: medium;
+    font-weight: 700;
+}
+.gu_btn_box div.clicked {
+    background-color: #0EB4FC;
+    border-radius: 24px;
+    
+}
+
+.res_banner {
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+}

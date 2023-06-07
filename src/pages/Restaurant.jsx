@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import {restaurantAction} from '../redux/actions/restaurantAction'
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+import ResCard from "../components/ResCard";
+
 
 const Restaurant = () => {
     const gu = [
@@ -9,25 +12,53 @@ const Restaurant = () => {
                 ]
     const dispatch = useDispatch();
     const {restaurantList, loading} = useSelector(state => state.restaurant);
+    // 클릭 시 css 코드 수정 state
+    const [clickedBtn, setClickedBtn] = useState("");
 
     useEffect(()=>{
         dispatch(restaurantAction.getRestaurant())
     },[])
     console.log(restaurantList);
-    return ( 
-        
 
-        <div>
+    const handleClick = (item) => {
+            if (item === clickedBtn) {
+            setClickedBtn("");
+            } else {
+            setClickedBtn(item);
+            }
+        };
+
+
+    if(loading){
+        return <ClipLoader color="#ffff" loading={loading} size={150}/>
+    }
+    return ( 
+        <div className="res_banner"
+        style={{backgroundImage:
+            'url('+`https://res.klook.com/image/upload/Mobile/City/g9ynzkjz1nsrvhrjml4j.jpg`+')',   
+            }}>
             구별, 날짜별, 부산 맛집 서비스 개발
+            <div className="gu_btn_box">
+            
             {
                 gu.map((item)=>{
-                    return <div>
-                        <button>{item}</button>
-                    </div>
+                    return <div onClick={()=>
+                        handleClick(item)
+                    } key={item} 
+                    className={clickedBtn === item ? "clicked" : ""}
+                    >{item}</div>
+                    
                     
                 })
             }
+            </div>
+
+            <div>
+                <ResCard/>
+            </div>
         </div>
+
+        
     );
 }
 

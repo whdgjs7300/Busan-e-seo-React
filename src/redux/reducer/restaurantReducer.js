@@ -2,6 +2,7 @@
 let initialState = {
 
     restaurantList : {},
+    resfilterList : {},
     loading : true,
     
 
