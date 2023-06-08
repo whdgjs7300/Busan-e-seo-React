@@ -3,6 +3,8 @@ import {restaurantAction} from '../redux/actions/restaurantAction'
 import { useEffect,useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import ResCard from "../components/ResCard";
+import Pagination from "react-js-pagination";
+
 
 
 const Restaurant = () => {
@@ -14,6 +16,13 @@ const Restaurant = () => {
     const {restaurantList, loading} = useSelector(state => state.restaurant);
     // 클릭 시 css 코드 수정 state
     const [clickedBtn, setClickedBtn] = useState("");
+
+     // 페이지 네이션 state
+    const [pageNum, setPageNum] = useState(1);
+    const handlePageChange = (pageNum) => {
+
+    setPageNum(pageNum)
+};
 
     useEffect(()=>{
         dispatch(restaurantAction.getRestaurant())
@@ -63,6 +72,19 @@ const Restaurant = () => {
                 }
                 
             </div>
+
+            <div className="Pagination_Box">
+    <Pagination
+    
+    activePage={pageNum}
+    itemsCountPerPage={20}
+    totalItemsCount={10} 
+    pageRangeDisplayed={5}
+    onChange={handlePageChange}
+    itemClass="page-item"
+    linkClass="page-link"
+/>
+</div>
         </div>
 
         
