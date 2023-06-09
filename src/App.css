@@ -63,9 +63,11 @@
 }
 
 .res_banner {
-    height: 100%;
-    background-position: center;
     background-size: cover;
+    background-position: center;
+
+    
+    
 }
 
 .card_Box {

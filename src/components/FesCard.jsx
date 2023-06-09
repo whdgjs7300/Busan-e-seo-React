@@ -42,19 +42,21 @@ const FesCard = ({item}) => {
                             fontSize : "14px",
                             fontWeight : "600"
                         }}>주소</p> 
-                        {item.ADDR1}
+                        {!item.ADDR1 ? item.GUGUN_NM : item.ADDR1}
                         <hr />
                         <p style={{
                             fontSize : "14px",
                             fontWeight : "600"
-                        }}>전화번호 </p> 
-                        {item.CNTCT_TEL}
+                        }}>축제 장소 </p> 
+                        {!item.MAIN_PLACE ? item.PLACE : item.MAIN_PLACE}
                         <hr />
                         <p style={{
                             fontSize : "14px",
                             fontWeight : "600"
                         }}>축제기간</p>
-                        {item.USAGE_DAY_WEEK_AND_TIME}
+                        {
+                        !item.USAGE_DAY_WEEK_AND_TIME ? "미정" : item.USAGE_DAY_WEEK_AND_TIME 
+                        }
                     
                 </Card.Text>
                 

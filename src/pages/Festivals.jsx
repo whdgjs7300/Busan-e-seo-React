@@ -44,7 +44,8 @@ const Festivals = () => {
         <div className="banner_container">
             <div className="res_banner"
         style={{backgroundImage:
-            'url('+`https://www.travelmap.co.kr/contents/files/board/news/2019/10/title_3194_1571035026.jpg`+')',   
+            'url('+`https://cdn.topstarnews.net/news/photo/first/201710/img_319449_1.jpg`+')',   
+            
             }}>
             <div className="gu_btn_box">
             
