@@ -1,6 +1,8 @@
 
 .banner_container {
-    height: 600px;
+    height: 100%;
+    display: flex;
+
 }
 
 .banner{
@@ -61,12 +63,24 @@
 }
 
 .res_banner {
-    height: 600px;
+    height: 100%;
     background-position: center;
     background-size: cover;
 }
 
 .card_Box {
+    
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    
+    gap: 30px;
+}
+.card-container {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.card_Box2 {
+    margin: auto;
 }

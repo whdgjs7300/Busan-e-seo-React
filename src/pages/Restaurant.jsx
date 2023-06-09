@@ -42,11 +42,11 @@ const Restaurant = () => {
         return <ClipLoader color="#ffff" loading={loading} size={150}/>
     }
     return ( 
-        <div className="res_banner"
+        <div className="banner_container">
+            <div className="res_banner"
         style={{backgroundImage:
             'url('+`https://res.klook.com/image/upload/Mobile/City/g9ynzkjz1nsrvhrjml4j.jpg`+')',   
             }}>
-            구별, 날짜별, 부산 맛집 서비스 개발
             <div className="gu_btn_box">
             
             {
@@ -65,7 +65,10 @@ const Restaurant = () => {
             <div className="card_Box">
                 {
                     restaurantList.map((item,i)=>{
-                        return  <ResCard key={i} item={item} gu={gu}/>
+                        return  <div className="card_Box2">
+                            <ResCard key={i} item={item} gu={gu}/>
+                        </div>
+                        
                         
                         
                     })
@@ -86,6 +89,8 @@ const Restaurant = () => {
 />
 </div>
         </div>
+        </div>
+        
 
         
     );
