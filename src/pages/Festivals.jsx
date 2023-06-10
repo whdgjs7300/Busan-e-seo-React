@@ -8,6 +8,7 @@ import styled from "styled-components";
 
 
 
+
 const Festivals = () => {
     const month = [
         "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"
@@ -17,6 +18,7 @@ const Festivals = () => {
     // 클릭 시 css 코드 수정 state
     const [clickedBtn, setClickedBtn] = useState("");
 
+
      // 페이지 네이션 state
     const [pageNum, setPageNum] = useState(1);
     const handlePageChange = (pageNum) => {
@@ -25,7 +27,7 @@ const Festivals = () => {
 };
     
     useEffect(()=>{
-        dispatch(festivalAction.getFestival(pageNum))
+        dispatch(festivalAction.getFestivalParam(pageNum));
     },[pageNum])
     console.log(festivalList.item);
 
@@ -43,7 +45,8 @@ const Festivals = () => {
     }
     return ( 
         <div className="banner_container">
-            <div className="res_banner"
+            <div 
+            className="res_banner"
         style={{backgroundImage:
             'url('+`https://cdn.topstarnews.net/news/photo/first/201710/img_319449_1.jpg`+')',   
             

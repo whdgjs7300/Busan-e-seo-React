@@ -1,10 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const ResCard = ({gu, item}) => {
+const ResCard = ({ item}) => {
 
 
-    console.log(item.MAIN_TITLE)
     return (
     <Card style={{ 
         width: '14rem',

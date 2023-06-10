@@ -1,17 +1,21 @@
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 
 const FesCard = ({item}) => {
 
+    const navigate = useNavigate();
+
     return (  
-        <Card style={{ 
+        <Card onClick={()=>navigate(`/festivals/${item.UC_SEQ}`)}
+        style={{ 
             width: '14rem',
             padding : "10px 15px" ,
             display : "flex",
             flexDirection : "column",
             justifyContent : "space-between",
             backgroundColor : "rgba(255, 255, 255, 0.8)",
-            
+            cursor : "pointer",
             }}>
             <Card.Img 
             style={{

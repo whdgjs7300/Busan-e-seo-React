@@ -1,7 +1,7 @@
 
 let initialState = {
 
-    festivalList : {},
+    festivalList : [{}],
     fesfilterList : {},
     loading : true,
     

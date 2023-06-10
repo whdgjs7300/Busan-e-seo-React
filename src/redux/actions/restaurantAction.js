@@ -16,8 +16,42 @@ function getRestaurant(pageNum) {
             type : "GET_RESTAURANT_SUCCESS", 
             payload : {
                 restaurantList : restaurantList.data.getFoodKr,
+
             }
         })
+        
+        
+        }
+        catch(error) {
+            dispach({type : "GET_RESTAURANT_FAILURE" })
+        }
+    }
+}
+
+function getResFilter(gu, pageNum) {
+    return async(dispach) => {
+        try {
+            dispach({type : "GET_RESTAURANT_REQUEST" })
+
+        const resFiltertApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=${pageNum}&numOfRows=271&resultType=json`)
+
+
+
+        let [resFilterList] = await Promise.all([resFiltertApi]);
+
+        const filteredList = resFilterList.data.getFoodKr.item.
+        filter((item) => item.GUGUN_NM === gu);
+
+
+        dispach({
+            type : "GET_RESTAURANT_FILTER", 
+            payload : {
+                resfilterList : filteredList
+
+            }
+        })
+        
+        
         }
         catch(error) {
             dispach({type : "GET_RESTAURANT_FAILURE" })
@@ -27,5 +61,5 @@ function getRestaurant(pageNum) {
 
 
 export const restaurantAction = {
-    getRestaurant,
+    getRestaurant, getResFilter,
 }

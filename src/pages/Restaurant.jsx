@@ -14,29 +14,37 @@ const Restaurant = () => {
         '북구', '사상구', '서구', '동구', '중구', '영도구', '사하구', '강서구'
                 ]
     const dispatch = useDispatch();
-    const {restaurantList, loading} = useSelector(state => state.restaurant);
+    const {restaurantList, loading, resfilterList} = useSelector(state => state.restaurant);
     // 클릭 시 css 코드 수정 state
     const [clickedBtn, setClickedBtn] = useState("");
 
      // 페이지 네이션 state
     const [pageNum, setPageNum] = useState(1);
+
     const handlePageChange = (pageNum) => {
 
     setPageNum(pageNum)
 };
 
     useEffect(()=>{
+        if(clickedBtn) {
+        dispatch(restaurantAction.getResFilter(clickedBtn))
+        }else {
         dispatch(restaurantAction.getRestaurant(pageNum))
-    },[pageNum])
-    console.log(restaurantList);
+    }
+    },[clickedBtn, pageNum])
+    console.log(resfilterList);
 
     const handleClick = (item) => {
             if (item === clickedBtn) {
             setClickedBtn("");
             } else {
             setClickedBtn(item);
+            dispatch(restaurantAction.getResFilter(item,pageNum));
             }
         };
+        
+    
 
 
     if(loading){
@@ -64,18 +72,20 @@ const Restaurant = () => {
             </div>
 
             <div className="card_Box">
-                {
-                    restaurantList.item.map((item,i)=>{
-                        return  <div className="card_Box2">
-                            <ResCard key={i} item={item} gu={gu}/>
-                        </div>
-                        
-                        
-                        
-                    })
-                }
-                
-            </div>
+                {(clickedBtn && resfilterList.length > 0) ? (
+                    resfilterList.map((item, i) => (
+                    <div className="card_Box2" key={i}>
+                        <ResCard item={item}  />
+                    </div>
+                    ))
+                ) : (
+                    restaurantList.item.map((item, i) => (
+                    <div className="card_Box2" key={i}>
+                        <ResCard item={item}  />
+                    </div>
+                    ))
+                )}
+                </div>
 
         
 <PaginationBox>
@@ -84,7 +94,7 @@ const Restaurant = () => {
     
     activePage={pageNum}
     itemsCountPerPage={10}
-    totalItemsCount={restaurantList.totalCount} 
+    totalItemsCount={resfilterList.length > 0 ? resfilterList.length : restaurantList.totalCount}
     pageRangeDisplayed={5}
     onChange={handlePageChange}
     itemClass="page-item"

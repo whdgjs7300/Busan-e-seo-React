@@ -23,6 +23,10 @@ const Home = () => {
         <div>
             
             <BannerSlide item={festivalList}/>
+            
+            <div>
+
+            </div>
         </div>
     );
 }

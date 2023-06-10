@@ -17,6 +17,10 @@ function festivalReducer(state=initialState, action) {
             restaurantList : payload.restaurantList,
     
             } 
+        case "GET_RESTAURANT_FILTER" :
+            return {...state,
+                resfilterList : payload.resfilterList
+            }
         case "GET_RESTAURANT_REQUEST" :
             return {...state, loading : true}
         case "GET_RESTAURANT_FAILURE" : 
