@@ -4,6 +4,7 @@ import { useEffect,useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import ResCard from "../components/ResCard";
 import Pagination from "react-js-pagination";
+import styled from "styled-components";
 
 
 
@@ -25,8 +26,8 @@ const Restaurant = () => {
 };
 
     useEffect(()=>{
-        dispatch(restaurantAction.getRestaurant())
-    },[])
+        dispatch(restaurantAction.getRestaurant(pageNum))
+    },[pageNum])
     console.log(restaurantList);
 
     const handleClick = (item) => {
@@ -64,7 +65,7 @@ const Restaurant = () => {
 
             <div className="card_Box">
                 {
-                    restaurantList.map((item,i)=>{
+                    restaurantList.item.map((item,i)=>{
                         return  <div className="card_Box2">
                             <ResCard key={i} item={item} gu={gu}/>
                         </div>
@@ -76,20 +77,24 @@ const Restaurant = () => {
                 
             </div>
 
-            <div className="Pagination_Box">
-    <Pagination
+        
+<PaginationBox>
+
+<Pagination
     
     activePage={pageNum}
-    itemsCountPerPage={20}
-    totalItemsCount={10} 
+    itemsCountPerPage={10}
+    totalItemsCount={restaurantList.totalCount} 
     pageRangeDisplayed={5}
     onChange={handlePageChange}
     itemClass="page-item"
     linkClass="page-link"
 />
+</PaginationBox>
+    
 </div>
         </div>
-        </div>
+        
         
 
         
@@ -97,3 +102,33 @@ const Restaurant = () => {
 }
 
 export default Restaurant;
+
+const PaginationBox = styled.div`
+.pagination { display: flex; justify-content: center; margin-top: 40px;}
+ul { list-style: none; 
+    padding : 10px 15px;
+    magin-bottom : 15px;
+    
+}
+ul.pagination li {
+    display: inline-block;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; 
+    font-weight : 700;
+}
+ul.pagination li:first-child{ border-radius: 5px 0 0 5px; }
+ul.pagination li:last-child{ border-radius: 0 5px 5px 0; }
+ul.pagination li a { text-decoration: none; color: black; font-size: 1rem; }
+ul.pagination li.active a { color: white; 
+    background-color: #0EB4FC;
+    border: none;
+}
+ul.pagination li.active { background-color: #0EB4FC; }
+ul.pagination li a:hover,
+ul.pagination li a.active { color: #0EB4FC;,
+    
+    }
+`

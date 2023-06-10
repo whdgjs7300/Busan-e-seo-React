@@ -4,6 +4,7 @@ import { useEffect,useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import Pagination from "react-js-pagination";
 import FesCard from "../components/FesCard";
+import styled from "styled-components";
 
 
 
@@ -22,11 +23,11 @@ const Festivals = () => {
 
     setPageNum(pageNum)
 };
-
+    
     useEffect(()=>{
-        dispatch(festivalAction.getFestival())
-    },[])
-    console.log(festivalList);
+        dispatch(festivalAction.getFestival(pageNum))
+    },[pageNum])
+    console.log(festivalList.item);
 
     const handleClick = (item) => {
             if (item === clickedBtn) {
@@ -64,7 +65,7 @@ const Festivals = () => {
 
             <div className="card_Box">
                 {
-                    festivalList.map((item,i)=>{
+                    festivalList.item.map((item,i)=>{
                         return  <div className="card_Box2">
                             <FesCard key={i} item={item} month={month}/>
                         </div>
@@ -76,20 +77,23 @@ const Festivals = () => {
                 
             </div>
                 
-            <div className="Pagination_Box">
-    <Pagination
+    <PaginationBox>
+        <Pagination
+        
+        activePage={pageNum}
+        itemsCountPerPage={10}
+        totalItemsCount={festivalList.totalCount} 
+        pageRangeDisplayed={5}
+        onChange={handlePageChange}
+        itemClass="page-item"
+        linkClass="page-link"
+    />
+    </PaginationBox>
     
-    activePage={pageNum}
-    itemsCountPerPage={20}
-    totalItemsCount={10} 
-    pageRangeDisplayed={5}
-    onChange={handlePageChange}
-    itemClass="page-item"
-    linkClass="page-link"
-/>
 </div>
         </div>
-        </div>
+        
+        
         
 
         
@@ -97,3 +101,33 @@ const Festivals = () => {
 }
 
 export default Festivals;
+
+const PaginationBox = styled.div`
+.pagination { display: flex; justify-content: center; margin-top: 40px;}
+ul { list-style: none; 
+    padding : 10px 15px;
+    magin-bottom : 15px;
+    
+}
+ul.pagination li {
+    display: inline-block;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; 
+    font-weight : 700;
+}
+ul.pagination li:first-child{ border-radius: 5px 0 0 5px; }
+ul.pagination li:last-child{ border-radius: 0 5px 5px 0; }
+ul.pagination li a { text-decoration: none; color: black; font-size: 1rem; }
+ul.pagination li.active a { color: white; 
+    background-color: #FFA500;
+    border: none;
+}
+ul.pagination li.active { background-color: #FFA500; }
+ul.pagination li a:hover,
+ul.pagination li a.active { color: #FFA500;,
+    
+    }
+`

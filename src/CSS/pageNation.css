@@ -1,0 +1,9 @@
+
+
+    @media (max-width: 768px){
+        .pagination {
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            }
+    }
