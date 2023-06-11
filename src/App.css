@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 
 .banner_container {
     height: 100%;
@@ -85,4 +89,29 @@
 
 .card_Box2 {
     margin: auto;
+    
+}
+
+
+
+/* BusanInfo Component CSS */
+.busan_info_container{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.busan_info_card a {
+    color: #FFA500;
+    
+}
+
+.busan_info_card p {
+    margin-top: 10px;
+    color: black;
+    font-size: medium;
+    font-weight: 600;
 }

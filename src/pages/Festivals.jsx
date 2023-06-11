@@ -26,7 +26,9 @@ const Festivals = () => {
     setPageNum(pageNum)
 };
     
+
     useEffect(()=>{
+        
         dispatch(festivalAction.getFestivalParam(pageNum));
     },[pageNum])
     console.log(festivalList.item);

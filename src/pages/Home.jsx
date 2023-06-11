@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { festivalAction } from "../redux/actions/festivalAction";
 import BannerSlide from "../components/BannerSlide";
 import ClipLoader from "react-spinners/ClipLoader";
+import Busaninfo from "../components/BusanInfo";
 
 const Home = () => {
 
@@ -24,9 +25,7 @@ const Home = () => {
             
             <BannerSlide item={festivalList}/>
             
-            <div>
-
-            </div>
+            <Busaninfo/>
         </div>
     );
 }
