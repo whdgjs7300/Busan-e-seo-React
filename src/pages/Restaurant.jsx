@@ -8,6 +8,7 @@ import styled from "styled-components";
 
 
 
+
 const Restaurant = () => {
     const gu = [
         '동래구', '금정구', '기장군', '연제구', '해운대구', '수영구', '남구', '부산진구',
@@ -40,7 +41,9 @@ const Restaurant = () => {
             setClickedBtn("");
             } else {
             setClickedBtn(item);
-            dispatch(restaurantAction.getResFilter(item,pageNum));
+            // 페이지 수가 1이 이상 일때 필터된 데이터 출력하게 하는 코드
+            setPageNum(1);
+            dispatch(restaurantAction.getResFilter(item, 1));
             }
         };
         
@@ -90,16 +93,18 @@ const Restaurant = () => {
         
 <PaginationBox>
 
-<Pagination
-    
-    activePage={pageNum}
-    itemsCountPerPage={10}
-    totalItemsCount={resfilterList.length > 0 ? resfilterList.length : restaurantList.totalCount}
-    pageRangeDisplayed={5}
-    onChange={handlePageChange}
-    itemClass="page-item"
-    linkClass="page-link"
-/>
+{ // 필터된 데이터는 페이지 네이션 적용 시키지 않음 }
+clickedBtn && resfilterList.length > 0 ? null : (
+    <Pagination
+        activePage={pageNum}
+        itemsCountPerPage={10}
+        totalItemsCount={restaurantList.totalCount}
+        pageRangeDisplayed={5}
+        onChange={handlePageChange}
+        itemClass="page-item"
+        linkClass="page-link"
+    />
+)}
 </PaginationBox>
     
 </div>

@@ -19,6 +19,7 @@ function festivalReducer(state=initialState, action) {
             } 
         case "GET_RESTAURANT_FILTER" :
             return {...state,
+                loading: false,
                 resfilterList : payload.resfilterList
             }
         case "GET_RESTAURANT_REQUEST" :
