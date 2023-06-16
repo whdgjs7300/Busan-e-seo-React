@@ -93,7 +93,7 @@ const Restaurant = () => {
         
 <PaginationBox>
 
-{ // 필터된 데이터는 페이지 네이션 적용 시키지 않음 }
+{ // 필터된 데이터는 페이지 네이션 적용 시키지 않음 : 데이터의 수가 대부분 작음}
 clickedBtn && resfilterList.length > 0 ? null : (
     <Pagination
         activePage={pageNum}
