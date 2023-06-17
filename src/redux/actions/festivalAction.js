@@ -52,6 +52,7 @@ function getFestivalParam(pageNum) {
 
 
 
+
 export const festivalAction = {
-    getFestival,getFestivalParam,
+    getFestival, getFestivalParam, 
 }

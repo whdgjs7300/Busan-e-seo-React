@@ -1,25 +1,24 @@
 
 let initialState = {
-
-    festivalList : [{}],
-    fesfilterList : {},
+    fesDetailList : [],
+    resDetailList : {},
     loading : true,
     
 
 };
 
-function festivalReducer(state=initialState, action) {
+function detailReducer(state=initialState, action) {
     let {type, payload} = action
     switch(type) {
-        case "GET_FESTIVAL_SUCCESS" :
+        case "GET_DETAIL_SUCCESS" :
             return {...state, 
             loading: false,
-            festivalList : payload.festivalList,
+            fesDetailList : payload.fesDetailList,
     
             } 
-        case "GET_FESTIVAL_REQUEST" :
+        case "GET_DETAIL_REQUEST" :
             return {...state, loading : true}
-        case "GET_FESTIVAL_FAILURE" : 
+        case "GET_DETAIL_FAILURE" : 
             return {...state, loading : false}
         default :
             return {...state};    
@@ -27,4 +26,4 @@ function festivalReducer(state=initialState, action) {
 }
 
 
-export default festivalReducer;
+export default detailReducer;
