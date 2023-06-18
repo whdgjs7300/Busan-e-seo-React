@@ -165,6 +165,20 @@ a {
 
 
 /* Detail Component CSS */
+.detail_title_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 200px;    
+    padding: 20px 30px;
+}
+.detail_title_box h1 {
+    font-weight: 700;
+}
+.detail_title_box p {
+    font-weight: 500;
+}
 
 .detail_img_box {
     background-size: cover;
