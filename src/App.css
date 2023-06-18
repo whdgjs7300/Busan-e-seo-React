@@ -228,5 +228,34 @@ a {
     background-color: #000000;
 }
 
+.guide_container {
+    border: solid 1px black;
+    border-radius: 12px;
+    width: 95%;
+    margin: auto;
+    
+}
 
+.guide_info {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    margin: auto;
+    
+}
 
+.guide_info p {
+    
+    margin: 5px;
+    width: 200px; /* 원하는 너비로 조정 */
+}
+.guide_info p:first-child {
+    color: #FFA500;
+    font-size: large;
+    font-weight: 700;
+}
+.guide_info p:nth-child(2) {
+    width: 500px;
+    font-size: large;
+    font-weight: 500;
+}

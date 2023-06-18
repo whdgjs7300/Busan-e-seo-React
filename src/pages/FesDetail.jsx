@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import { detailAction } from "../redux/actions/detailAction";
 import DetailInfo from "../components/DetailInfo";
+import DetailInfo2 from "../components/DetailInfo2";
+import Weather from "../components/Weather";
+import Guide from "../components/Guide";
+import Map from "../components/Map";
 
 
 const FesDetail = () => {
@@ -11,9 +15,16 @@ const FesDetail = () => {
     const dispatch = useDispatch();
     const {id} = useParams();
 
+    const [activeComponent, setActiveComponent] = useState("상세정보");
+    const detailNav = ["상세정보", "지도/주변맛집", "주변날씨", "이용안내" ]
+
     useEffect(()=>{
         dispatch(detailAction.getDetail(id))
     },[])
+
+    const handleItemClick = (item) => {
+        setActiveComponent(item);
+    };
 
     console.log(fesDetailList)
 
@@ -39,7 +50,16 @@ const FesDetail = () => {
             </div>
 
                 <DetailInfo item={fesDetailList}/>
-            
+                {
+                    detailNav.map((item)=>{
+                        return <button onClick={()=>handleItemClick(item)}>{item}</button>
+                    })
+                }
+                {/* 컴포넌트 조건부 렌더링 */}
+                {activeComponent === "상세정보" && <DetailInfo2 item={fesDetailList} />}
+                {activeComponent === "지도/주변맛집" && <Map />}
+                {activeComponent === "주변날씨" && <Weather/>}
+                {activeComponent === "이용안내" && <Guide item={fesDetailList}/>}
         </div>
     );
 }
