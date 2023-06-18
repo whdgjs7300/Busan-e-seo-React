@@ -259,3 +259,12 @@ a {
     font-size: large;
     font-weight: 500;
 }
+.info2_container {
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 12px;
+    width: 95%;
+    margin: auto;
+    padding: 30px;
+    
+}
