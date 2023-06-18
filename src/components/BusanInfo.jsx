@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays,faTruckPlane,faCloudSun,faVanShuttle,faCarBurst } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
 
 
 const Busaninfo = () => {
@@ -10,7 +9,6 @@ const Busaninfo = () => {
         {name : "부산날씨정보", iconName : faCloudSun, url : 'https://www.kma.go.kr/busan/html/main/index.jsp'}, {name : "부산시티투어", iconName : faVanShuttle, url : 'http://www.citytourbusan.com/ko/00main/main.php'}, 
         {name : "부산교통정보", iconName : faCarBurst, url : 'https://its.busan.go.kr'}     
     ]
-    const navigate = useNavigate();
 
     // 아이콘의 이름을 동적으로 불러오기 위한 함수
     const getIconComponent = (icon) => {

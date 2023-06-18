@@ -16,7 +16,7 @@ function getDetail(id) {
         dispach({
             type : "GET_DETAIL_SUCCESS", 
             payload : {
-                fesDetailList : fesDetailList.data.getFestivalKr.item,
+                fesDetailList : fesDetailList.data.getFestivalKr.item[0],
             }
         })
         }

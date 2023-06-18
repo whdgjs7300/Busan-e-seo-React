@@ -164,9 +164,55 @@ a {
 }
 
 
+/* Detail Component CSS */
 
+.detail_img_box {
+    background-size: cover;
+    background-position: center;
 
+    height: 500px;
 
+}
+
+.detail_info_box {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 350px;
+}
+.detail_info_box1 {
+    flex: 1;
+    
+}
+.detail_info_box1 p{
+    font-weight: 700;
+    font-size: large;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.detail_info_box1 span {
+    margin-left: 20px;
+    
+}
+.detail_info_box2 {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding: 20px;
+}
+.detail_info_box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 70%;
+    background-color: #000000;
+}
 
 
 
