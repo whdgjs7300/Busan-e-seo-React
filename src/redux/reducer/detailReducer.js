@@ -2,6 +2,7 @@
 let initialState = {
     fesDetailList : [],
     resDetailList : {},
+    weatherList : {},
     loading : true,
     
 
@@ -14,7 +15,7 @@ function detailReducer(state=initialState, action) {
             return {...state, 
             loading: false,
             fesDetailList : payload.fesDetailList,
-    
+            weatherList : payload.weatherList,
             } 
         case "GET_DETAIL_REQUEST" :
             return {...state, loading : true}

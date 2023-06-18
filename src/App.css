@@ -268,3 +268,6 @@ a {
     padding: 30px;
     
 }
+.map_container {
+    display: flex;
+}
