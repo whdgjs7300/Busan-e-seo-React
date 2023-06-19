@@ -37,7 +37,7 @@ const Weather = ({lat, lon , item}) => {
     console.log(weather)
     return ( 
         
-        <div>
+        <div className="weather_container">
             {
                 loading ? (
                     <ClipLoader
@@ -46,35 +46,40 @@ const Weather = ({lat, lon , item}) => {
                         size={150}
                     /> 
                 ) : (
-                    <div>
-                        <h2>현재 기상정보</h2>
-                        <h3>{item.PLACE} 근처의 기상 정보 입니다.</h3>
-                        <div>
-                            <div>
+                    <div className="weather_box">
+                        <h2 style={{textAlign: "center", marginTop: "20px", fontWeight:"900"}}>{item.PLACE} 근처의 기상 정보 입니다.</h2>
+                        <div style={{textAlign : "center"}} >
+                            <div className="weather_first_box">
                                 <img
                                     src={`http://openweathermap.org/img/wn/${weather?.weather[0].icon}.png`}
                                     alt="Weather Icon"
                                 />
                                 {/* 구름의 양에 따라 다른 내용을 표시 */}
                                 {weather?.clouds.all !== undefined && (
-                                        <p> {weatherStatus}</p>
+                                        <p style={{fontSize : "30px"}}> {weatherStatus}</p>
                                     )}
                             </div>
                             
-                            <h3>{weather?.main.temp.toFixed(1)}°C</h3> <span>체감({weather?.main.feels_like.toFixed(1)}°C)</span>
-                            <p>{weather?.weather[0].description}</p>
+                            <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                                <h3 style={{fontWeight : "700", fontSize : "70px"}}>{weather?.main.temp.toFixed(1)}°C</h3>
+                                <span style={{marginLeft: "10px", fontWeight : "500", fontSize : "20px"}}>체감({weather?.main.feels_like.toFixed(1)}°C)</span>
+                            </div>
+                                <p style={{fontSize: "15px"}}>{weather?.weather[0].description}</p>
                             
                         </div>
 
-                        <div>
-                            <div>
+                        <div className="weather_second_box">
+                            <div className="weather_second_box_1">
                                 {/*  sys.sunrise 값을 밀리초 단위로 변환한 후, toLocaleTimeString 함수를 사용하여 해당 시간을 변환하고 시간과 분만을 추출하여 표시 2-digit' : 2자리 수 */}
                             <p>일출 : {new Date(weather?.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                             <p>일몰 : {new Date(weather?.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                             </div>
 
                             <div>
-                                
+                                <p>최저 기온은 <h3>{weather?.main.temp_min.toFixed(1)}°C</h3>입니다.</p>
+                                <p>최고 기온은 <h3>{weather?.main.temp_max.toFixed(1)}°C</h3> 입니다.</p>
+                                <p>습도는 <h3>{weather?.main.humidity}</h3>입니다.</p>
+                                <p>풍향은 <h3>{weather?.wind.deg}</h3> 입니다.</p>
                             </div>
                         </div>
 
