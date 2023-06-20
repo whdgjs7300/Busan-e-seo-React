@@ -8,25 +8,19 @@ import DetailInfo2 from "../components/DetailInfo2";
 import Weather from "../components/Weather";
 import Guide from "../components/Guide";
 import Map from "../components/Map";
-import { restaurantAction } from "../redux/actions/restaurantAction";
+
 
 
 const FesDetail = () => {
-    const {fesDetailList, loading,} = useSelector(state=>state.detail)
+    const {fesDetailList, loading,} = useSelector(state=>state.fesDetail)
     const dispatch = useDispatch();
     const {id} = useParams();
 
     const [activeComponent, setActiveComponent] = useState("상세정보");
     const detailNav = ["상세정보", "지도/주변맛집", "주변날씨", "이용안내" ]
 
-    useEffect(()=>{
-        if(activeComponent == "주변날씨") {
-            dispatch(detailAction.getFesDetail(id, fesDetailList.LAT, fesDetailList.LNG))
-        }else {
-            dispatch(detailAction.getFesDetail(id))
-        }
-        
-        
+    useEffect(()=>{        
+            dispatch(detailAction.getFesDetail(id))        
     },[])
 
     const handleItemClick = (item) => {

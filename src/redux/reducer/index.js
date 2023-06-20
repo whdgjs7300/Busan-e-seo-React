@@ -1,10 +1,13 @@
 import { combineReducers } from "redux";
 import festivalReducer from "./festivalReducer";
 import restaurantReducer from "./restaurantReducer";
-import detailReducer from "./detailReducer";
+import fesdetailReducer from "./fesdetailReducer";
+import resdetailReducer from "./resdetailReducer";
+
 
 export default combineReducers({
     festival : festivalReducer,    
     restaurant : restaurantReducer,
-    detail : detailReducer,
+    fesDetail : fesdetailReducer,
+    resDetail : resdetailReducer,
 });
