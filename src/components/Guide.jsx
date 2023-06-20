@@ -15,22 +15,46 @@ const Guide = ({item}) => {
                 <p>홈페이지 :</p>
                 <p>{item.HOMEPAGE_URL || "없음"}</p>
             </div>
-            <div className="guide_info">
-                <p>운영요일 및 시간 :</p>
-                <p>{item.USAGE_DAY || item.USAGE_DAY_WEEK_AND_TIME || "미정"}</p>
-            </div>
-            <div className="guide_info">
-                <p>이용요금 :</p>
-                <p>{item.USAGE_AMOUNT || "미정"}</p>
-            </div>
-            <div className="guide_info">
-                <p>교통정보 :</p>
-                <p>{item.TRFC_INFO || "미제공"}</p>
-            </div>
-            <div className="guide_info">
-                <p>비고 :</p>
-                <p>{item.MIDDLE_SIZE_RM1 || "없음"}</p>
-            </div>
+            {  
+                        item.USAGE_AMOUNT ? ( // item : fesDetailList
+                        <>
+                            <div className="guide_info">
+                                <p>운영요일 및 시간 :</p>
+                                <p>{item.USAGE_DAY || item.USAGE_DAY_WEEK_AND_TIME || "미정"}</p>
+                            </div>
+                            <div className="guide_info">
+                                <p>이용요금 :</p>
+                                <p>{item.USAGE_AMOUNT || "미정"}</p>
+                            </div>
+                            <div className="guide_info">
+                                <p>교통정보 :</p>
+                                <p>{item.TRFC_INFO || "미제공"}</p>
+                            </div>
+                            <div className="guide_info">
+                                <p>비고 :</p>
+                                <p>{item.MIDDLE_SIZE_RM1 || "없음"}</p>
+                            </div>
+                        </>
+                    ) : (
+                        // item : resDetailList
+                        <>
+                                <div className="guide_info">
+                                <p>영업시간 :</p>
+                                <p>{item.USAGE_DAY || item.USAGE_DAY_WEEK_AND_TIME || "미정"}</p>
+                            </div>
+                            <div className="guide_info">
+                                <p>대표음식 :</p>
+                                <p>{item.RPRSNTV_MENU || "미정"}</p>
+                            </div>
+                            <div className="guide_info">
+                                <p>교통정보 :</p>
+                                <p>{item.TRFC_INFO || "미제공"}</p>
+                            </div>
+                            
+                        </>
+                    )
+                }
+            
         </div>
     );
 }

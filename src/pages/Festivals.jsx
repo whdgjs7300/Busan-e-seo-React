@@ -38,6 +38,10 @@ const Festivals = () => {
             setClickedBtn("");
             } else {
             setClickedBtn(item);
+             // 페이지 수가 1이 이상 일때 필터된 데이터 출력하게 하는 코드 추가해야함
+            
+            setPageNum(1);
+            
             }
         };
 

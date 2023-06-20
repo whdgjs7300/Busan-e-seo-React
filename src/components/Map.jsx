@@ -42,10 +42,25 @@ const Map = ({item}) => {
             height: '500px'
             }}></div>
 
-            <div>
-                <h4>주변 맛집</h4>
-                맛집 데이터 들어와함
-            </div>
+                        {  
+                        item.USAGE_AMOUNT ? ( // item : fesDetailList
+                        <>
+                        <div>
+                            <h4>주변 맛집</h4>
+                            맛집 데이터 들어와함
+                        </div>
+                        </>
+                    ) : (
+                        // item : resDetailList
+                        <>
+                            <div>
+                            <h4>주변 축제</h4>
+                            축제 데이터 들어와함
+                            </div>
+                        </>
+                    )
+                }
+            
         </div>
         
     );

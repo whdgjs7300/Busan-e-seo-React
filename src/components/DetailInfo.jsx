@@ -24,7 +24,7 @@ const DetailInfo = ({item}) => {
                     ) : (
                         // item : resDetailList
                         <>
-                        <p>영업시간</p>{" "}
+                        <p>영업시간</p>
                         <span>
                             {item.USAGE_DAY_WEEK_AND_TIME ||
                             item.USAGE_DAY ||
@@ -38,7 +38,7 @@ const DetailInfo = ({item}) => {
             </div>
             <div className="detail_info_box2">
                     <h3 style={{marginBottom : "30px"}}>교통정보</h3>
-                    <p style={{marginLeft: "20px"}}>{item.TRFC_INFO || "정보 없음"}</p>
+                    <p style={{marginLeft: "20px"}}>{item.TRFC_INFO || "미제공"}</p>
             </div>
         </div>
     );
