@@ -15,6 +15,7 @@ function detailReducer(state=initialState, action) {
             return {...state, 
             loading: false,
             fesDetailList : payload.fesDetailList,
+            resDetailList : payload.resDetailList,
             weatherList : payload.weatherList,
             } 
         case "GET_DETAIL_REQUEST" :

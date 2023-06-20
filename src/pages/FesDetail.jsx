@@ -12,7 +12,7 @@ import { restaurantAction } from "../redux/actions/restaurantAction";
 
 
 const FesDetail = () => {
-    const {fesDetailList, loading, weatherList} = useSelector(state=>state.detail)
+    const {fesDetailList, loading,} = useSelector(state=>state.detail)
     const dispatch = useDispatch();
     const {id} = useParams();
 
@@ -21,9 +21,9 @@ const FesDetail = () => {
 
     useEffect(()=>{
         if(activeComponent == "주변날씨") {
-            dispatch(detailAction.getDetail(id, fesDetailList.LAT, fesDetailList.LNG))
+            dispatch(detailAction.getFesDetail(id, fesDetailList.LAT, fesDetailList.LNG))
         }else {
-            dispatch(detailAction.getDetail(id))
+            dispatch(detailAction.getFesDetail(id))
         }
         
         

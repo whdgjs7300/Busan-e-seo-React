@@ -24,7 +24,7 @@ const Weather = ({lat, lon , item}) => {
         } else if (cloudsValue === 100) {
             weatherStatus = "매우 흐림"; // 많은 구름이 있는 경우
         } else if (cloudsValue > 70) {
-            weatherStatus = "흐림"; // 구름이 많이 있는 경우
+            weatherStatus = "흐림"; // 구름이 있는 경우
         } else if (cloudsValue > 30) {
             weatherStatus = "구름 조금"; // 구름이 약간 있는 경우
         } else {
