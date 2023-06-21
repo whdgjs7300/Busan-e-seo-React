@@ -61,8 +61,6 @@ function getFesFilter(month) {
 
         const fesFiltertApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=32&resultType=json`)
 
-
-
         let [fesfilterList] = await Promise.all([fesFiltertApi]);
 
         const filteredList = fesfilterList.data.getFestivalKr.item.
