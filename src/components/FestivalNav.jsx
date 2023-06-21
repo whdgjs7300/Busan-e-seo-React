@@ -11,8 +11,9 @@ const FestivalNav = () => {
             paddingLeft : "50px"
             
         }}>
-            <div>
-                아이콘들어갈 자리
+            <div style={{ 
+                }}>
+                
             </div>
             <Nav.Item >
             <Nav.Link style={{

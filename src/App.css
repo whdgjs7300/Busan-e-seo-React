@@ -159,6 +159,8 @@ a {
 .footer_box1 {
     flex: 1;
     text-align: center;
+    display: flex; 
+    flex-direction: column;
     justify-content: space-between;
     
 }

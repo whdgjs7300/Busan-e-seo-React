@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import {  Routes, Route } from 'react-router-dom';
+import {  Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import FesDetail from './pages/FesDetail';
 import Login from './pages/Login';
@@ -11,11 +11,21 @@ import FestivalNav from './components/FestivalNav';
 import Restaurant from './pages/Restaurant';
 import Footer from './components/Footer';
 import ResDetail from './pages/ResDetail';
-
+import titleIcon from "./Images/titleIcon.png";
 
 function App() {
+  const navigate = useNavigate();
   return (
     <div className="App">
+      <div 
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: 1,
+      }}>
+        <img style={{ width: "135px", height: "135px" }} src={titleIcon} alt="" />
+      </div>
       <HomeNav/>
       <FestivalNav/>
       <Routes>
