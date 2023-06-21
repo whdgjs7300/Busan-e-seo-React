@@ -20,7 +20,6 @@ function getRestaurant(pageNum) {
             }
         })
         
-        
         }
         catch(error) {
             dispach({type : "GET_RESTAURANT_FAILURE" })

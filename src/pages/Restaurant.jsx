@@ -33,7 +33,7 @@ const Restaurant = () => {
         }else {
         dispatch(restaurantAction.getRestaurant(pageNum))
     }
-    },[clickedBtn, pageNum])
+    },[ pageNum])
     console.log(resfilterList);
 
     const handleClick = (item) => {
