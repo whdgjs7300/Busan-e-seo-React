@@ -1,4 +1,3 @@
-import titleIcon from '../Images/titleIcon.png';
 
 const Footer = () => {
 
@@ -9,7 +8,7 @@ const Footer = () => {
         <div className="footer_box1">
                 <h4 className="footer_title">제공</h4>
                 <div style={{marginTop : "60px"}}>                
-                    <img style={{width:"150px", height:"100px"}} src={titleIcon} alt="" />        
+     
                 </div>
                 <p>2023 JongHeon PARK - All rights reserved.</p>
             </div>

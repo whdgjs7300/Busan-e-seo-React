@@ -9,14 +9,14 @@ import Busaninfo from "../components/BusanInfo";
 const Home = () => {
 
     const dispatch = useDispatch();
-    const {festivalList, loading} = useSelector(state => state.festival )
+    const {festivalBannerList, loading} = useSelector(state => state.festival )
 
     useEffect(()=>{
         dispatch(festivalAction.getFestival())
     },[])
 
 
-    console.log(festivalList)
+    console.log(festivalBannerList)
 
     if(loading){
         return <ClipLoader color="#ffff" loading={loading} size={150}/>
@@ -24,7 +24,7 @@ const Home = () => {
     return ( 
         <div>
             
-            <BannerSlide item={festivalList}/>
+            <BannerSlide item={festivalBannerList}/>
             
             <Busaninfo/>
         </div>

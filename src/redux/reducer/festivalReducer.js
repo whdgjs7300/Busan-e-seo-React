@@ -1,6 +1,7 @@
 
 let initialState = {
 
+    festivalBannerList : {},
     festivalList : {},
     fesfilterList : {},
     loading : true,
@@ -15,8 +16,13 @@ function festivalReducer(state=initialState, action) {
             return {...state, 
             loading: false,
             festivalList : payload.festivalList,
-    
+            festivalBannerList : payload.festivalBannerList,
             } 
+        case "GET_FESTIVAL_FILTER" :
+            return {...state,
+                loading: false,
+                fesfilterList : payload.fesfilterList
+            }
         case "GET_FESTIVAL_REQUEST" :
             return {...state, loading : true}
         case "GET_FESTIVAL_FAILURE" : 

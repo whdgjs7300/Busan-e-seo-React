@@ -14,7 +14,7 @@ const Festivals = () => {
         "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"
                 ]
     const dispatch = useDispatch();
-    const {festivalList, loading} = useSelector(state => state.festival);
+    const {festivalList,fesfilterList, loading} = useSelector(state => state.festival);
     // 클릭 시 css 코드 수정 state
     const [clickedBtn, setClickedBtn] = useState("");
 
@@ -28,8 +28,12 @@ const Festivals = () => {
     
 
     useEffect(()=>{
+        if(clickedBtn){
+            dispatch(festivalAction.getFesFilter(clickedBtn))
+        } else {
+            dispatch(festivalAction.getFestivalParam(pageNum));
+        }
         
-        dispatch(festivalAction.getFestivalParam(pageNum));
     },[pageNum])
     console.log(festivalList.item);
 
@@ -38,10 +42,8 @@ const Festivals = () => {
             setClickedBtn("");
             } else {
             setClickedBtn(item);
-             // 페이지 수가 1이 이상 일때 필터된 데이터 출력하게 하는 코드 추가해야함
-            
-            setPageNum(1);
-            
+            // 클릭 이벤트 후 dispatch로 필터데이터 호출
+            dispatch(festivalAction.getFesFilter(item))
             }
         };
 
@@ -73,30 +75,34 @@ const Festivals = () => {
             </div>
 
             <div className="card_Box">
-                {
-                    festivalList.item.map((item,i)=>{
-                        return  <div className="card_Box2">
-                            <FesCard key={i} item={item} month={month}/>
-                        </div>
-                        
-                        
-                        
-                    })
-                }
-                
-            </div>
+                {(clickedBtn && fesfilterList.length > 0) ? (
+                    fesfilterList.map((item, i) => (
+                    <div className="card_Box2" key={i}>
+                        <FesCard item={item}  />
+                    </div>
+                    ))
+                ) : (
+                    festivalList.item.map((item, i) => (
+                    <div className="card_Box2" key={i}>
+                        <FesCard item={item}  />
+                    </div>
+                    ))
+                )}
+                </div>
                 
     <PaginationBox>
-        <Pagination
-        
+    { // 필터된 데이터는 페이지 네이션 적용 시키지 않음 : 데이터의 수가 대부분 작음}
+    clickedBtn && fesfilterList.length > 0 ? null : (
+    <Pagination
         activePage={pageNum}
         itemsCountPerPage={10}
-        totalItemsCount={festivalList.totalCount} 
+        totalItemsCount={festivalList.totalCount}
         pageRangeDisplayed={5}
         onChange={handlePageChange}
         itemClass="page-item"
         linkClass="page-link"
     />
+)}
     </PaginationBox>
     
 </div>

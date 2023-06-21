@@ -2,21 +2,22 @@ import axios from 'axios';
 
 const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D"
 
+// Home 페이지 - Banner 
 
 function getFestival() {
     return async(dispach) => {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const festivalApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json`)
+        const festivalBannerListApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json`)
 
 
-        let [festivalList,] = await Promise.all([festivalApi,])
+        let [festivalBannerList,] = await Promise.all([festivalBannerListApi,])
 
         dispach({
             type : "GET_FESTIVAL_SUCCESS", 
             payload : {
-                festivalList : festivalList.data.getFestivalKr.item,
+                festivalBannerList : festivalBannerList.data.getFestivalKr.item,
             }
         })
         }
@@ -26,6 +27,7 @@ function getFestival() {
     }
 }
 
+// festivals 페이지 - 페이지네이션
 
 function getFestivalParam(pageNum) {
     return async(dispach) => {
@@ -50,9 +52,45 @@ function getFestivalParam(pageNum) {
     }
 }
 
+// Festivals 페이지 - 필터된 데이터
+
+function getFesFilter(month) {
+    return async(dispach) => {
+        try {
+            dispach({type : "GET_FESTIVAL_REQUEST" })
+
+        const fesFiltertApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=32&resultType=json`)
+
+
+
+        let [fesfilterList] = await Promise.all([fesFiltertApi]);
+
+        const filteredList = fesfilterList.data.getFestivalKr.item.
+        filter((item)=>item.USAGE_DAY_WEEK_AND_TIME.includes(month) 
+        || item.USAGE_DAY.includes(month)
+        
+        )
+            
+
+
+        dispach({
+            type : "GET_FESTIVAL_FILTER", 
+            payload : {
+                fesfilterList : filteredList
+
+            }
+        })
+        
+        
+        }
+        catch(error) {
+            dispach({type : "GET_FESTIVAL_FAILURE" })
+        }
+    }
+}
 
 
 
 export const festivalAction = {
-    getFestival, getFestivalParam, 
+    getFestival, getFestivalParam, getFesFilter,
 }

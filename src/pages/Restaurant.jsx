@@ -34,19 +34,16 @@ const Restaurant = () => {
         dispatch(restaurantAction.getRestaurant(pageNum))
     }
     },[ pageNum])
-    console.log(resfilterList);
+    console.log(restaurantList);
 
     const handleClick = (item) => {
             if (item === clickedBtn) {
             setClickedBtn("");
             } else {
-            setClickedBtn(item);
-            // 페이지 수가 1이 이상 일때 필터된 데이터 출력하게 하는 코드
-            setPageNum(1);
-            dispatch(restaurantAction.getResFilter(item, 1));
+            setClickedBtn(item);         
+            dispatch(restaurantAction.getResFilter(item));
             }
         };
-        
     
 
 
