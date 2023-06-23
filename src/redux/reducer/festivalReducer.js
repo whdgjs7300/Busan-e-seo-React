@@ -1,9 +1,10 @@
 
 let initialState = {
-    retaurantCardList : {},
+    retaurantCardList : {}, // 홈페이지 resCard state
     festivalBannerList : {},
     festivalList : {},
     fesfilterList : {},
+    nearbyfesList : {},
     loading : true,
     
 
@@ -22,6 +23,10 @@ function festivalReducer(state=initialState, action) {
             return {...state,
                     loading: false,
                     festivalList : payload.festivalList,
+                }
+        case "GET_NEARBYFES_SUCCESS" : 
+                return {...state,
+                    nearbyfesList : payload.nearbyfesList,
                 }
         case "GET_FESTIVAL_FILTER" :
             return {...state,

@@ -42,7 +42,6 @@ function getResFilter(gu,) {
 
         const resFiltertApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=271&resultType=json`)
 
-
         let [resFilterList] = await Promise.all([resFiltertApi]);
 
         const filteredList = resFilterList.data.getFoodKr.item.
@@ -65,7 +64,34 @@ function getResFilter(gu,) {
     }
 }
 
+// MapCard 컴포넌트 - 주변 맛집 필터 
+
+function getNearByRes(item) {
+    return async(dispach) => {
+        try {
+            dispach({type : "GET_FESTIVAL_REQUEST" })
+
+        const NearByResApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&resultType=json&pageNo=1&numOfRows=32`);
+
+        let [nearbyresList] = await Promise.all([NearByResApi,])
+        // 맛집 주변 맛집 필터 변수
+
+        let nearByRes = nearbyresList.data.getFestivalKr.item.filter((restaurant) => restaurant.GUGUN_NM.includes(item.GUGUN_NM));
+            
+        dispach({
+            type : "GET_NEARBYRES_SUCCESS", 
+            payload : {
+                nearbyresList : nearByRes,
+            }
+        })
+        }
+        catch(error) {
+            dispach({type : "GET_FESTIVAL_FAILURE" })
+        }
+    }
+}
+
 
 export const restaurantAction = {
-    getRestaurantParam, getResFilter
+    getRestaurantParam, getResFilter, getNearByRes,
 }

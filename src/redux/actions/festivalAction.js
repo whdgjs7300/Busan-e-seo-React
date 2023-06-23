@@ -30,25 +30,19 @@ function getFestival() {
 
 // festivals 페이지 - 페이지네이션
 
-function getFestivalParam(pageNum, numOfRows, item) {
+function getFestivalParam(pageNum ) {
     return async(dispach) => {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const festivalApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&resultType=json&
-        ${pageNum ? `&pageNo=${pageNum}&` : "&pageNo=1&"}
-        ${numOfRows ? `&numOfRows=${numOfRows}` : "&numOfRows=10"}`)
+        const festivalApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&numOfRows=10&pageNo=${pageNum}&resultType=json`)
 
 
         let [festivalList,] = await Promise.all([festivalApi,])
-        // 맛집 주변 축제 필터 변수
-        //.data.getFestivalKr.item. (예시)
-
         dispach({
             type : "GET_FESTIVAL_SUCCESS", 
             payload : {
                 festivalList : festivalList.data.getFestivalKr,
-                
             }
         })
         }
@@ -74,9 +68,6 @@ function getFesFilter(month) {
         || item.USAGE_DAY.includes(month)
         
         )
-            
-
-
         dispach({
             type : "GET_FESTIVAL_FILTER", 
             payload : {
@@ -84,8 +75,34 @@ function getFesFilter(month) {
 
             }
         })
-        
-        
+        }
+        catch(error) {
+            dispach({type : "GET_FESTIVAL_FAILURE" })
+        }
+    }
+}
+
+// MapCard 컴포넌트 - 주변 축제 필터 
+
+function getNearByFes(item) {
+    return async(dispach) => {
+        try {
+            dispach({type : "GET_FESTIVAL_REQUEST" })
+
+        const NearByFesApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&resultType=json&pageNo=1&numOfRows=32`);
+
+        let [nearbyfesList] = await Promise.all([NearByFesApi,])
+        // 맛집 주변 축제 필터 변수
+
+        let nearByFes = nearbyfesList.data.getFestivalKr.item.filter((festival) => festival.GUGUN_NM.includes(item.GUGUN_NM));
+            console.log(nearbyfesList)
+        dispach({
+            type : "GET_NEARBYFES_SUCCESS", 
+            payload : {
+                nearbyfesList : nearByFes,
+                
+            }
+        })
         }
         catch(error) {
             dispach({type : "GET_FESTIVAL_FAILURE" })
@@ -95,6 +112,7 @@ function getFesFilter(month) {
 
 
 
+
 export const festivalAction = {
-    getFestival, getFestivalParam, getFesFilter,
+    getFestival, getFestivalParam, getFesFilter, getNearByFes
 }
