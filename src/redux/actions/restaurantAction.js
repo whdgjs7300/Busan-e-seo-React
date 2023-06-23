@@ -2,9 +2,11 @@ import axios from 'axios';
 
 const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D"
 
-// Restaurant 페이지
 
-function getRestaurant(pageNum) {
+
+// Restaurant 페이지 - 페이지 네이션
+
+function getRestaurantParam(pageNum) {
     return async(dispach) => {
         try {
             dispach({type : "GET_RESTAURANT_REQUEST" })
@@ -39,7 +41,6 @@ function getResFilter(gu,) {
         const resFiltertApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=271&resultType=json`)
 
 
-
         let [resFilterList] = await Promise.all([resFiltertApi]);
 
         const filteredList = resFilterList.data.getFoodKr.item.
@@ -64,5 +65,5 @@ function getResFilter(gu,) {
 
 
 export const restaurantAction = {
-    getRestaurant, getResFilter,
+    getRestaurantParam, getResFilter
 }

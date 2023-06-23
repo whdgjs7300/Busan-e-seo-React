@@ -6,7 +6,7 @@ a {
 .banner_container {
     height: 100%;
     display: flex;
-
+    width: 100%;
 }
 
 .banner{
@@ -71,7 +71,7 @@ a {
 .res_banner {
     background-size: cover;
     background-position: center;
-
+    width: 100%;
     
     
 }

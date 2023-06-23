@@ -1,6 +1,6 @@
 
 let initialState = {
-
+    retaurantCardList : {},
     restaurantList : {},
     resfilterList : {},
     loading : true,

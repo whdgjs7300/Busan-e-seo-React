@@ -31,7 +31,7 @@ const Restaurant = () => {
         if(clickedBtn) {
         dispatch(restaurantAction.getResFilter(clickedBtn))
         }else {
-        dispatch(restaurantAction.getRestaurant(pageNum))
+        dispatch(restaurantAction.getRestaurantParam(pageNum))
     }
     },[ pageNum])
     console.log(restaurantList);

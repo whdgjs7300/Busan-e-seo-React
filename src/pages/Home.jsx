@@ -4,19 +4,22 @@ import { festivalAction } from "../redux/actions/festivalAction";
 import BannerSlide from "../components/BannerSlide";
 import ClipLoader from "react-spinners/ClipLoader";
 import Busaninfo from "../components/BusanInfo";
+import HomeResInfo from "../components/HomeResInfo";
+import { restaurantAction } from "../redux/actions/restaurantAction";
 
 
 const Home = () => {
 
     const dispatch = useDispatch();
-    const {festivalBannerList, loading} = useSelector(state => state.festival )
+    const {festivalBannerList, loading, retaurantCardList} = useSelector(state => state.festival )
+    
 
     useEffect(()=>{
-        dispatch(festivalAction.getFestival())
+        dispatch(festivalAction.getFestival());
     },[])
 
 
-    console.log(festivalBannerList)
+
 
     if(loading){
         return <ClipLoader color="#ffff" loading={loading} size={150}/>
@@ -25,7 +28,7 @@ const Home = () => {
         <div>
             
             <BannerSlide item={festivalBannerList}/>
-            
+            <HomeResInfo item={retaurantCardList}/>
             <Busaninfo/>
         </div>
     );
