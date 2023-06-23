@@ -32,7 +32,7 @@ const Busaninfo = () => {
                     className='busan_info_card'>
                         <a target='blank' href={item.url}>
                             {getIconComponent(item.iconName)}
-                            <p style={{marginTop : "10px"}}>{item.name}</p>
+                            <p style={{marginTop : "10px", marginBottom :" 50px"}}>{item.name}</p>
                         </a>
                         
                     </div>

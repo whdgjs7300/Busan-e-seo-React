@@ -47,7 +47,7 @@ const Weather = ({lat, lon , item}) => {
                     /> 
                 ) : (
                     <div className="weather_box">
-                        <h2 style={{textAlign: "center", marginTop: "20px", fontWeight:"900"}}>{item.PLACE} 근처의 기상 정보 입니다.</h2>
+                        <h2 style={{textAlign: "center", marginTop: "20px", fontWeight:"900"}}>{item.PLACE || item.MAIN_TITLE} 근처의 기상 정보 입니다.</h2>
                         <div style={{textAlign : "center"}} >
                             <div className="weather_first_box">
                                 <img

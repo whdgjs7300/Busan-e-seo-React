@@ -43,7 +43,12 @@ a {
     width: 100%;
     
 }
-
+.card_title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: auto;
+    padding: 10px;
+}
 
 
 /* Restaurant Page CSS */
@@ -302,3 +307,5 @@ a {
     display: flex;
     
 }
+
+
