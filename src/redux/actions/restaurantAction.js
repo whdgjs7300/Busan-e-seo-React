@@ -6,12 +6,14 @@ const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKo
 
 // Restaurant 페이지 - 페이지 네이션
 
-function getRestaurantParam(pageNum) {
+function getRestaurantParam(pageNum, numOfRows) {
     return async(dispach) => {
         try {
             dispach({type : "GET_RESTAURANT_REQUEST" })
 
-        const restaurantApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=${pageNum}&numOfRows=10&resultType=json`)
+        const restaurantApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&resultType=json&
+        ${pageNum ? `&pageNo=${pageNum}&` : "&pageNo=1&"}
+        ${numOfRows ? `&numOfRows=${numOfRows}` : "&numOfRows=10"}`)
 
 
         let [restaurantList,] = await Promise.all([restaurantApi,])

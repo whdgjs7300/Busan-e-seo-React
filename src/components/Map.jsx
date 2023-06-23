@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import MapCard from "./MapCard";
 
 
 const { kakao } = window;
@@ -30,11 +31,11 @@ const Map = ({item}) => {
         position : iwPosition, 
         content : iwContent 
     });
-    
+    console.log(markerPosition)
     // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
     infowindow.open(map, marker); 
     }, []);
-    console.log(item)
+    
     return ( 
         <div className="map_container">
             <div id='myMap'  style={{
@@ -42,25 +43,8 @@ const Map = ({item}) => {
             height: '500px'
             }}></div>
 
-                        {  
-                        item.USAGE_AMOUNT ? ( // item : fesDetailList
-                        <>
-                        <div>
-                            <h4>주변 맛집</h4>
-                            맛집 데이터 들어와함
-                        </div>
-                        </>
-                    ) : (
-                        // item : resDetailList
-                        <>
-                            <div>
-                            <h4>주변 축제</h4>
-                            축제 데이터 들어와함
-                            </div>
-                        </>
-                    )
-                }
-            
+            <MapCard item={item}/>
+
         </div>
         
     );

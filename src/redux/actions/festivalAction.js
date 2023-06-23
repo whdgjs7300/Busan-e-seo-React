@@ -30,20 +30,25 @@ function getFestival() {
 
 // festivals 페이지 - 페이지네이션
 
-function getFestivalParam(pageNum) {
+function getFestivalParam(pageNum, numOfRows, item) {
     return async(dispach) => {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const festivalApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=${pageNum}&numOfRows=10&resultType=json`)
+        const festivalApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&resultType=json&
+        ${pageNum ? `&pageNo=${pageNum}&` : "&pageNo=1&"}
+        ${numOfRows ? `&numOfRows=${numOfRows}` : "&numOfRows=10"}`)
 
 
         let [festivalList,] = await Promise.all([festivalApi,])
+        // 맛집 주변 축제 필터 변수
+        //.data.getFestivalKr.item. (예시)
 
         dispach({
             type : "GET_FESTIVAL_SUCCESS", 
             payload : {
                 festivalList : festivalList.data.getFestivalKr,
+                
             }
         })
         }
