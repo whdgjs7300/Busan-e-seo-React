@@ -71,12 +71,12 @@ function getNearByRes(item) {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const NearByResApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&resultType=json&pageNo=1&numOfRows=32`);
+        const NearByResApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=271&resultType=json`);
 
         let [nearbyresList] = await Promise.all([NearByResApi,])
         // 맛집 주변 맛집 필터 변수
 
-        let nearByRes = nearbyresList.data.getFestivalKr.item.filter((restaurant) => restaurant.GUGUN_NM.includes(item.GUGUN_NM));
+        let nearByRes = nearbyresList.data.getFoodKr.item.filter((restaurant) => restaurant.GUGUN_NM.includes(item.GUGUN_NM));
             
         dispach({
             type : "GET_NEARBYRES_SUCCESS", 

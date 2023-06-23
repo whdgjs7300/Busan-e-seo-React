@@ -20,7 +20,7 @@ const MapCard = ({item}) => {
     },[])
 
     console.log(item)
-    console.log(nearbyresList)
+    console.log(nearbyresList,nearbyfesList)
     return ( 
         <div>
             {  

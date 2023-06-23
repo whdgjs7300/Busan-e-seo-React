@@ -96,6 +96,7 @@ function getNearByFes(item) {
 
         let nearByFes = nearbyfesList.data.getFestivalKr.item.filter((festival) => festival.GUGUN_NM.includes(item.GUGUN_NM));
             console.log(nearbyfesList)
+            
         dispach({
             type : "GET_NEARBYFES_SUCCESS", 
             payload : {
