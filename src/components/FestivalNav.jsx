@@ -11,7 +11,7 @@ const FestivalNav = () => {
             paddingLeft : "50px"
             
         }}>
-            <div style={{ 
+            <div style={{ marginRight : "200px"
                 }}>
                 
             </div>

@@ -17,7 +17,7 @@ function App() {
   const navigate = useNavigate();
   return (
     <div className="App">
-      <div 
+      <div onClick={()=>navigate('/')}
       style={{
         position: "fixed",
         top: 0,

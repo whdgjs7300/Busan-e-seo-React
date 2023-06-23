@@ -20,7 +20,7 @@ const HomeResInfo = ({item}) => {
 
     return (
         <div style={{marginTop : "50px"}}>
-            <h2 style={{textAlign : "center"}}>최고의 휴양지인 부산에서 즐기는 맛집 !</h2>
+            <h2 style={{textAlign : "center",fontWeight:"700"}}>최고의 휴양지인 부산에서 즐기는 맛집 !</h2>
             <Row style={{margin: "20px"}} xs={1} md={2} className="g-4">
             {item.map((src, idx) => (
                 <Col  key={idx}>

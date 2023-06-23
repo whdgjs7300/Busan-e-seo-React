@@ -174,6 +174,7 @@ a {
 /* Detail Component CSS */
 
 .detail_title_box {
+    margin-top:  50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -183,15 +184,16 @@ a {
 }
 .detail_title_box h1 {
     font-weight: 700;
+    font-size: 50px;
 }
 .detail_title_box p {
+    margin-bottom: 30px;
     font-weight: 500;
 }
 
 .detail_img_box {
     background-size: cover;
     background-position: center;
-
     height: 500px;
 
 }

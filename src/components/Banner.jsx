@@ -15,6 +15,7 @@ const Banner = ({item}) => {
             }}>2023</h3>
                 <h2>{item.TITLE}</h2>
                 <h4 style={{color:"#FFA500"}}>BUSAN FESTIVAL</h4>
+                <h5>{item.SUBTITLE || item.PLACE}</h5>
                 <div className="banner_info_day">
                     <h5>{item.USAGE_DAY == "" ? item.USAGE_DAY_WEEK_AND_TIME
                         : item.USAGE_DAY}</h5>
