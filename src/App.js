@@ -12,9 +12,24 @@ import Restaurant from './pages/Restaurant';
 import Footer from './components/Footer';
 import ResDetail from './pages/ResDetail';
 import titleIcon from "./Images/titleIcon.png";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 function App() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // 로컬 스토리지에서 로그인 상태 가져오기
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    // 리덕스 액션 디스패치하여 로그인 상태 업데이트
+    if (isLoggedIn === 'true') {
+      dispatch({ type: 'LOGIN' });
+    }
+  }, []);
+
+  
   return (
     <div className="App">
       <div onClick={()=>navigate('/')}

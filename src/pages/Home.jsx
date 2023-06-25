@@ -5,20 +5,18 @@ import BannerSlide from "../components/BannerSlide";
 import ClipLoader from "react-spinners/ClipLoader";
 import Busaninfo from "../components/BusanInfo";
 import HomeResInfo from "../components/HomeResInfo";
-import { restaurantAction } from "../redux/actions/restaurantAction";
-
 
 const Home = () => {
 
     const dispatch = useDispatch();
     const {festivalBannerList, loading, retaurantCardList} = useSelector(state => state.festival )
-    
+    const {isLoggedin} = useSelector(state=>state.user)
 
     useEffect(()=>{
         dispatch(festivalAction.getFestival());
     },[])
 
-
+    console.log(isLoggedin)
 
 
     if(loading){
