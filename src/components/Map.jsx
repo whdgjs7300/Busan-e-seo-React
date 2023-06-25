@@ -1,11 +1,28 @@
 import { useEffect } from "react";
 import MapCard from "./MapCard";
-
+import { useDispatch, useSelector } from "react-redux";
+import { restaurantAction } from "../redux/actions/restaurantAction";
+import { festivalAction } from "../redux/actions/festivalAction";
 
 const { kakao } = window;
 
 const Map = ({item}) => {
 
+    const dispatch = useDispatch();
+    const {nearbyfesList} = useSelector((state)=>state.festival)
+    const {nearbyresList } = useSelector((state)=>state.restaurant)
+
+
+    useEffect(()=>{
+        // 디테일 페이지가 restaurantList로 구성되어 있다면
+        if(item.RPRSNTV_MENU) {
+            dispatch(festivalAction.getNearByFes(item))
+        }else {
+            dispatch(restaurantAction.getNearByRes(item))
+        }
+    },[])
+
+    console.log(nearbyfesList, nearbyresList)
     useEffect(() => {
         const container = document.getElementById('myMap');
 		const options = {
@@ -43,7 +60,7 @@ const Map = ({item}) => {
             height: '500px'
             }}></div>
 
-            <MapCard item={item}/>
+            <MapCard item={item.RPRSNTV_MENU ? nearbyfesList : nearbyresList} />
 
         </div>
         

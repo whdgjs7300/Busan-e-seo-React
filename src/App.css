@@ -311,3 +311,10 @@ a {
 }
 
 
+/* Map Component CSS */
+.map_cards_container {
+    width: 40%;
+    height: 500px;
+    border: 1px solid black;
+    overflow-y: auto;
+}
