@@ -335,3 +335,13 @@ a {
     margin-top: 10px;
     font-weight: 600;
 }
+
+.map_cardItem_btn {
+    font-weight: 600;
+    width: 100%;
+    height: 40px;
+    border:  solid 1px #FFA500;
+    border-radius: 12px;
+    background-color: white;
+    color: #FFA500;
+}

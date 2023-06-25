@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -6,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 const MapCard = ({item}) => {
     
     console.log(item)
-    
+    const navigate = useNavigate();
 
     
     return ( 
@@ -30,6 +31,9 @@ const MapCard = ({item}) => {
                 <Card.Text>    
                 {cardItem.RPRSNTV_MENU || cardItem.USAGE_DAY || cardItem.USAGE_DAY_WEEK_AND_TIME}
                 </Card.Text>
+                <button 
+                onClick={()=> cardItem.RPRSNTV_MENU ? navigate(`/restaurant/${cardItem.UC_SEQ}`) : navigate(`/festivals/${cardItem.UC_SEQ}`)}
+                className='map_cardItem_btn'>상세 보기</button>
             </Card.Body>
             </Card>
         ))}
