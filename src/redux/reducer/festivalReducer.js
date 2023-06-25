@@ -4,7 +4,7 @@ let initialState = {
     festivalBannerList : {},
     festivalList : {},
     fesfilterList : {},
-    nearbyfesList : {},
+    nearbyfesList : [],
     loading : true,
     
 

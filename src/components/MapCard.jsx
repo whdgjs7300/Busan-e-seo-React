@@ -1,31 +1,38 @@
 import Card from 'react-bootstrap/Card';
 
 
+
+
 const MapCard = ({item}) => {
     
-
     console.log(item)
+    
+
     
     return ( 
         <div className="map_cards_container">
-            <div>
+            <div className='map_cards_title'>
             {  
                 !item[0]?.RPRSNTV_MENU ?  // item : resDetailList
-                <h4>주변 축제</h4> : <h4>주변 맛집</h4>
-                        
+                <h4>주변 축제</h4> : <h4>주변 맛집</h4>      
             }
             </div>
-            
-        <Card style={{ width: '95%', margin: "auto" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+
+
+            {item.map((cardItem, index) => (
+        <Card
+            key={index}
+            style={{ width: '95%', margin: 'auto', marginBottom: '20px' }}
+            >
+            <Card.Img variant="top" src={cardItem.MAIN_IMG_NORMAL} />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                <Card.Title>{cardItem.MAIN_TITLE}</Card.Title>
+                <Card.Text>    
+                {cardItem.RPRSNTV_MENU || cardItem.USAGE_DAY || cardItem.USAGE_DAY_WEEK_AND_TIME}
                 </Card.Text>
             </Card.Body>
-        </Card>
+            </Card>
+        ))}
         </div>
     );
 }

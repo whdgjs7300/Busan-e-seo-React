@@ -3,7 +3,7 @@ let initialState = {
     retaurantCardList : {},
     restaurantList : {},
     resfilterList : {},
-    nearbyresList : {},
+    nearbyresList : [],
     loading : true,
     
 

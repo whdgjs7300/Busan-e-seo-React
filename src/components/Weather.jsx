@@ -41,7 +41,7 @@ const Weather = ({lat, lon , item}) => {
             {
                 loading ? (
                     <ClipLoader
-                        color="#f88c6b"
+                        color="white"
                         loading={loading}
                         size={150}
                     /> 

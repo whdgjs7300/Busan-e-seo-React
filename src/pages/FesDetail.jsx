@@ -57,11 +57,14 @@ const FesDetail = () => {
                         onClick={()=>handleItemClick(item)}>{item}</button>
                     })
                 }
+                <div style={{marginBottom : "50px"}}>
                 {/* 컴포넌트 조건부 렌더링 */}
                 {activeComponent === "상세정보" && <DetailInfo2 item={fesDetailList} />}
                 {activeComponent === "지도/주변맛집" && <Map  item={fesDetailList}/>}
                 {activeComponent === "주변날씨" && <Weather lat={fesDetailList.LAT} lon={fesDetailList.LNG} item={fesDetailList}/>}
                 {activeComponent === "이용안내" && <Guide item={fesDetailList}/>}
+                </div>
+
         </div>
     );
 }
