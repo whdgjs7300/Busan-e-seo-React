@@ -13,11 +13,14 @@ import Footer from './components/Footer';
 import ResDetail from './pages/ResDetail';
 import titleIcon from "./Images/titleIcon.png";
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import FesPrivateRoute from './Routers/FesPrivateRoute';
+import ResPrivateRoute from './Routers/ResPrivateRoute';
 
 function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const {isLoggedin} = useSelector(state=>state.user)
 
   useEffect(() => {
     // 로컬 스토리지에서 로그인 상태 가져오기
@@ -29,7 +32,8 @@ function App() {
     }
   }, []);
 
-  
+
+
   return (
     <div className="App">
       <div onClick={()=>navigate('/')}
@@ -46,9 +50,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/festivals' element={<Festivals/>}></Route>
-        <Route path='/festivals/:id' element={<FesDetail/>}></Route>
+        <Route path='/festivals/:id' element={<FesPrivateRoute/>}></Route>
         <Route path='/restaurant' element={<Restaurant/>}></Route>
-        <Route path='/restaurant/:id' element={<ResDetail/>}></Route>
+        <Route path='/restaurant/:id' element={<ResPrivateRoute/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
       </Routes>

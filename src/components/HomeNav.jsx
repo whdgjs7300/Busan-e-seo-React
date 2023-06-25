@@ -2,6 +2,7 @@ import Nav from 'react-bootstrap/Nav';
 import '../CSS/Nav.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const HomeNav = () => {
 
@@ -10,11 +11,16 @@ const HomeNav = () => {
     const dispatch = useDispatch();
     console.log(isLoggedin)
 
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    
     const handleLogout = () => {
         dispatch({type : "LOGOUT"});
         localStorage.setItem('isLoggedIn', 'false');
         navigate('/')
     };
+
+
+
     return ( 
         
             <Nav style={{

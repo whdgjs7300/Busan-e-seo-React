@@ -14,7 +14,7 @@ const Home = () => {
 
     useEffect(()=>{
         dispatch(festivalAction.getFestival());
-    },[])
+    },[isLoggedin])
 
     console.log(isLoggedin)
 
