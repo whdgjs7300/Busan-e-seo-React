@@ -16,22 +16,20 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FesPrivateRoute from './Routers/FesPrivateRoute';
 import ResPrivateRoute from './Routers/ResPrivateRoute';
+import LoginPrivateRoute from './Routers/LoginPrivateRoute';
+import ClipLoader from "react-spinners/ClipLoader";
+import LoginNav from './components/LoginNav';
+
 
 function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {isLoggedin} = useSelector(state=>state.user)
 
-  useEffect(() => {
-    // 로컬 스토리지에서 로그인 상태 가져오기
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-    // 리덕스 액션 디스패치하여 로그인 상태 업데이트
-    if (isLoggedIn === 'true') {
-      dispatch({ type: 'LOGIN' });
-    }
-  }, []);
 
+
+    
 
 
   return (
@@ -45,7 +43,10 @@ function App() {
       }}>
         <img style={{ width: "135px", height: "135px" }} src={titleIcon} alt="" />
       </div>
-      <HomeNav/>
+      {
+        isLoggedIn === "true" ? <LoginNav/> : <HomeNav/>
+      }
+        
       <FestivalNav/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
@@ -53,7 +54,7 @@ function App() {
         <Route path='/festivals/:id' element={<FesPrivateRoute/>}></Route>
         <Route path='/restaurant' element={<Restaurant/>}></Route>
         <Route path='/restaurant/:id' element={<ResPrivateRoute/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/login' element={<LoginPrivateRoute/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
       </Routes>
       <Footer/>

@@ -1,5 +1,6 @@
 const initialState = {
-    isLoggedin: false,
+    isLoggedin: localStorage.getItem('isLoggedIn') === 'true',
+    loginLoading : false,
 };
     
     const userReducer = (state = initialState, action) => {
@@ -8,13 +9,23 @@ const initialState = {
         case 'LOGIN':
             return {
             ...state,
-            isLoggedin: true,
+            isLoggedin: payload,
             };
+        case 'LOGIN_SUCCESS' : 
+            return {
+                ...state,     
+                loginLoading : false,
+            }
         case 'LOGOUT':
             return {
             ...state,
-            isLoggedin: false,
+            isLoggedin: false,   
             };
+        case "LOGIN_ERROR" : 
+            return {
+            ...state,
+            loginLoading : false,
+            }
         default:
             return state;
         }

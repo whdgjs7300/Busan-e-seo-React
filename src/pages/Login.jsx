@@ -12,7 +12,7 @@ const Login = () => {
     const [errorMsg, setErrorMsg] = useState("　");
     const navigate = useNavigate();
 
-    const {isLoggedin} = useSelector(state=>state.user)
+    const {isLoggedin,loginLoading} = useSelector(state=>state.user)
     const dispatch = useDispatch();
 
     console.log(isLoggedin)

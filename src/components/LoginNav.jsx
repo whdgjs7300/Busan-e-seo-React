@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
-const HomeNav = () => {
+const LoginNav = () => {
 
     const {isLoggedin} = useSelector(state=>state.user)
     const navigate = useNavigate();
@@ -15,7 +15,6 @@ const HomeNav = () => {
     
     const handleLogout = () => {
         localStorage.setItem('isLoggedIn', 'false');
-        navigate('/')
         
     };
 
@@ -34,12 +33,11 @@ const HomeNav = () => {
             <Nav.Item>
                 <Nav.Link href='/'>HOME</Nav.Link>
             </Nav.Item>
-            <Nav.Item>
-                    <Nav.Link href='/login'>로그인</Nav.Link>
+            <Nav.Item onClick={handleLogout}>
+                    <Nav.Link 
+                    href='/'>로그아웃</Nav.Link>
             </Nav.Item>
-            <Nav.Item>
-                <Nav.Link href="/signup">회원가입</Nav.Link> 
-            </Nav.Item>
+
             <Nav.Item>
             <Nav.Link eventKey="disabled" disabled>
                 Disabled
@@ -53,4 +51,4 @@ const HomeNav = () => {
     );
 }
 
-export default HomeNav;
+export default LoginNav;
