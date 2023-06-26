@@ -71,15 +71,16 @@ const Weather = ({lat, lon , item}) => {
                         <div className="weather_second_box">
                             <div className="weather_second_box_1">
                                 {/*  sys.sunrise 값을 밀리초 단위로 변환한 후, toLocaleTimeString 함수를 사용하여 해당 시간을 변환하고 시간과 분만을 추출하여 표시 2-digit' : 2자리 수 */}
-                            <p>일출 : {new Date(weather?.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
-                            <p>일몰 : {new Date(weather?.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                            <p>일출 : <span>{new Date(weather?.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span></p>
+                            <p>일몰 : <span>{new Date(weather?.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span></p>
                             </div>
 
-                            <div>
-                                <p>최저 기온은 <h3>{weather?.main.temp_min.toFixed(1)}°C</h3>입니다.</p>
-                                <p>최고 기온은 <h3>{weather?.main.temp_max.toFixed(1)}°C</h3> 입니다.</p>
-                                <p>습도는 <h3>{weather?.main.humidity}</h3>입니다.</p>
-                                <p>풍향은 <h3>{weather?.wind.deg}</h3> 입니다.</p>
+                            <div className="weather_second_box_2">
+                                <div><p>최저 기온은 <h3>{weather?.main.temp_min.toFixed(1)}°C</h3>입니다.</p></div>
+                                <div><p>최고 기온은 <h3>{weather?.main.temp_max.toFixed(1)}°C</h3> 입니다.</p></div>
+                                <div><p>습도는 <h3>{weather?.main.humidity}</h3>입니다.</p></div>
+                                <div><p>풍향은 <h3>{weather?.wind.deg}</h3> 입니다.</p></div>
+                                
                             </div>
                         </div>
 

@@ -8,29 +8,29 @@ const DetailInfo = ({item}) => {
         
         <div className="detail_info_box">
             <div className="detail_info_box1">
-                <p>주소 </p> <span>{item.ADDR1 ||  item.ADDR2 || "미 정"}</span>
-                <p>전화번호</p> <span>{item.CNTCT_TEL || "없 음"}</span>
+                <h4>주소 </h4> <p>{item.ADDR1 ||  item.ADDR2 || "미 정"}</p>
+                <h4>전화번호</h4> <p>{item.CNTCT_TEL || "없 음"}</p>
                 {
                         item.USAGE_AMOUNT ? ( // item : fesDetailList
                         <>
-                        <p>축제기간</p>
-                        <span>
+                        <h4>축제기간</h4>
+                        <p>
                             {item.USAGE_DAY_WEEK_AND_TIME ||
                             item.USAGE_DAY ||
                             "미 정"}
-                        </span>
-                        <p>이용요금</p> <span>{item.USAGE_AMOUNT}</span>
+                        </p>
+                        <h4>이용요금</h4> <p>{item.USAGE_AMOUNT}</p>
                         </>
                     ) : (
                         // item : resDetailList
                         <>
-                        <p>영업시간</p>
-                        <span>
+                        <h4>영업시간</h4>
+                        <p>
                             {item.USAGE_DAY_WEEK_AND_TIME ||
                             item.USAGE_DAY ||
                             "미 정"}
-                        </span>
-                        <p>대표음식</p> <span>{item.RPRSNTV_MENU}</span>
+                        </p>
+                        <h4>대표음식</h4> <p>{item.RPRSNTV_MENU}</p>
                         </>
                     )
                 }
