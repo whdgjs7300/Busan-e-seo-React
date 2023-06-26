@@ -33,7 +33,8 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div 
+    className="App">
       <div onClick={()=>navigate('/')}
       style={{
         position: "fixed",

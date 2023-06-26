@@ -9,6 +9,8 @@ a {
     width: 100%;
 }
 
+
+
 .banner{
     background-size: cover;
     background-position: center;
@@ -57,6 +59,7 @@ a {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 .gu_btn_box div {
@@ -73,10 +76,31 @@ a {
     
 }
 
+.month_btn_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.month_btn_box div {
+    padding: 20px 24px;
+    color: white;
+    cursor: pointer;
+    margin: auto;
+    font-size: medium;
+    font-weight: 700;
+}
+.month_btn_box div.clicked {
+    background-color: #FFA500;
+    border-radius: 24px;
+    
+}
+
 .res_banner {
     background-size: cover;
     background-position: center;
     width: 100%;
+    
     
     
 }
@@ -96,7 +120,7 @@ a {
 
 .card_Box2 {
     margin: auto;
-    
+    margin-bottom: 20px;
 }
 
 

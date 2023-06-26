@@ -61,19 +61,25 @@ function getFesFilter(month) {
 
         const fesFiltertApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=32&resultType=json`)
 
-        let [fesfilterList] = await Promise.all([fesFiltertApi]);
+
+
+        let [fesfilterList,] = await Promise.all([fesFiltertApi, ]);
+        
+        
 
         const filteredList = fesfilterList.data.getFestivalKr.item.
-        filter((item)=>item.USAGE_DAY_WEEK_AND_TIME.includes(month) 
-        || item.USAGE_DAY.includes(month)
+        filter((item)=>item.USAGE_DAY_WEEK_AND_TIME.includes(month) || 
+        item.USAGE_DAY_WEEK_AND_TIME.includes(month.split("월", 1))
+        || item.USAGE_DAY.includes(month) 
         
         )
         dispach({
             type : "GET_FESTIVAL_FILTER", 
             payload : {
-                fesfilterList : filteredList
+                fesfilterList : filteredList,
 
             }
+            
         })
         }
         catch(error) {
