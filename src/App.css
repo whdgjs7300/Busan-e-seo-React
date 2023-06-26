@@ -314,6 +314,7 @@ a {
 
 
 /* Map Component CSS */
+
 .map_cards_container {
     margin: auto;
     width: 40%;
@@ -345,3 +346,66 @@ a {
     background-color: white;
     color: #FFA500;
 }
+
+/* Login Component CSS */
+
+.login_container {
+    
+    margin-top: 50px;
+}
+.login_container h1{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    color: #FFA500;
+    margin-bottom: 50px;
+    
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+.login_form p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+
+.login_form input, .login_form button {
+    margin: auto;
+    margin-top: 10px;
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-weight: 600;
+}
+.first_login_btn {
+    background: rgb(255, 255, 255) url('https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+    border: 1px solid rgb(220, 74, 61);
+    color: rgb(220, 74, 61);;
+}
+.first_login_btn:hover {
+    border-color: rgb(220, 74, 61);
+    background: rgb(220, 74, 61) url('https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus-white.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+    -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+    color: white;
+}
+
+.login_form input[type="submit"] {
+    background-color: #FFA500;
+    color: white;
+    cursor: pointer;
+}
+
+
+

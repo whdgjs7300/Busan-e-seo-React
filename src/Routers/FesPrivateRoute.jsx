@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 
 const FesPrivateRoute = () => {
 
-    const {isLoggedin} = useSelector(state=>state.user);
+
     const isLoggedIn = localStorage.getItem('isLoggedIn');
 
     const handleWarning = () => {

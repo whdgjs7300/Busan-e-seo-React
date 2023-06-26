@@ -12,10 +12,9 @@ const Login = () => {
     const [errorMsg, setErrorMsg] = useState("　");
     const navigate = useNavigate();
 
-    const {isLoggedin,loginLoading} = useSelector(state=>state.user)
-    const dispatch = useDispatch();
 
-    console.log(isLoggedin)
+
+    
     // 일반 로그인 실행 함수
     const userLogin = async () => {
         try {
@@ -51,6 +50,8 @@ const Login = () => {
             .then((data) => {
                 setUserData(data.user); // user data 설정 - 리덕스로 전역관리
                 console.log(data); // console에 UserCredentialImpl 출력
+                // 로그인 상태를 로컬 스토리지에 저장
+                localStorage.setItem('isLoggedIn', 'true');
                 navigate('/')
             })
             .catch((err) => {
@@ -59,19 +60,19 @@ const Login = () => {
         }
 
     return ( 
-        <div >
-            
-            <h2>로그인</h2>
-            <form  onSubmit={(e)=>{e.preventDefault(); userLogin()}}>
-                <p>이메일</p>
+        <div className="login_container">
+            <h1 >로그인</h1>
+
+            <form  className="login_form"
+            onSubmit={(e)=>{e.preventDefault(); userLogin()}}>
                 <input type="text" placeholder="이메일" onChange={(e)=>{setTypingEmail(e.target.value)}}/>
-                <p >비밀번호</p>
-                <input type="password" onChange={ (e)=>{setTypingPassword(e.target.value)}} />
-                <input type="submit" value="로그인" />
-                <Link to="/signup" >회원가입</Link>
+                <input type="password" placeholder="비밀번호" onChange={ (e)=>{setTypingPassword(e.target.value)}} />
                 <p>{errorMsg}</p>
+                <input type="submit" value="로그인" />
+                <button className="first_login_btn" onClick={handleGoogleLogin} >구글로 로그인</button>
+                <button className="second_login_btn" onClick={()=>navigate('/signup')}>회원가입</button>
             </form>
-            <button onClick={handleGoogleLogin} >구글로 로그인</button>
+            
         </div>
     );
 }
