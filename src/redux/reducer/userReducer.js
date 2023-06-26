@@ -1,16 +1,11 @@
 const initialState = {
-    isLoggedin: localStorage.getItem('isLoggedIn') === 'true',
+    
     loginLoading : false,
 };
     
     const userReducer = (state = initialState, action) => {
         let {type, payload} = action
         switch (type) {
-        case 'LOGIN':
-            return {
-            ...state,
-            isLoggedin: payload,
-            };
         case 'LOGIN_SUCCESS' : 
             return {
                 ...state,     

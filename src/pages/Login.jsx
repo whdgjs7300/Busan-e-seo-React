@@ -21,10 +21,6 @@ const Login = () => {
         try {
             const curUserInfo = await signInWithEmailAndPassword(firebaseAuth, typingEmail, typingPassword);
             console.log(curUserInfo);
-            // 리덕스로 유저 로그인 true,false 유무 셋팅
-            dispatch({
-                type : "LOGIN"
-            })
             // setUser(curUserInfo.user);
             navigate('/')
             // 로그인 상태를 로컬 스토리지에 저장

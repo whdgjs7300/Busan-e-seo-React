@@ -19,7 +19,7 @@ const FesPrivateRoute = () => {
     };
 
     return isLoggedIn === 'true' ? <FesDetail/> :
-    <Navigate to='/login'/>
+    handleWarning()
 
 }
 
