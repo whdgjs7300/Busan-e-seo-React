@@ -1,5 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
+import Nodata from './Nodata';
 
 
 
@@ -19,7 +20,6 @@ const MapCard = ({item}) => {
             }
             </div>
 
-
             {item.map((cardItem, index) => (
         <Card
             key={index}
@@ -37,6 +37,11 @@ const MapCard = ({item}) => {
             </Card.Body>
             </Card>
         ))}
+
+        {
+            item.length === 0 ? <Nodata/> : null
+        }
+
         </div>
     );
 }

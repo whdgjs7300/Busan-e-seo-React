@@ -7,6 +7,7 @@ import Busaninfo from "../components/BusanInfo";
 import HomeResInfo from "../components/HomeResInfo";
 import { homeAction } from "../redux/actions/homeAction";
 
+
 const Home = () => {
 
     const dispatch = useDispatch();
@@ -17,7 +18,6 @@ const Home = () => {
         dispatch(homeAction.getHomeData());
     },[])
 
-    console.log();
 
 
     if(loading){

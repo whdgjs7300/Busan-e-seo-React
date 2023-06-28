@@ -1,7 +1,14 @@
 import Nav from 'react-bootstrap/Nav';
-
+import { useState } from 'react';
 
 const FestivalNav = () => {
+
+    const [showSublist, setShowSublist] = useState(false);
+
+
+    const handleSearchClick = () => {
+        setShowSublist(!showSublist);
+    };
 
     return ( 
         <Nav style={{
@@ -28,12 +35,20 @@ const FestivalNav = () => {
                 }} href="/restaurant">부산맛집</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-            <Nav.Link style={{
+            <Nav.Link
+            onClick={handleSearchClick}
+            style={{
                 fontSize:"20px",
                 fontWeight : "700"
                 }} >
-                커뮤니티
-            </Nav.Link>
+                검색하기
+            </Nav.Link >
+                    {showSublist && (
+                    <ul>
+                        <li>축제 검색</li>
+                        <li>맛집 검색</li>
+                    </ul>
+                )}
             </Nav.Item>
         </Nav>
     );

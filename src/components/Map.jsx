@@ -3,6 +3,7 @@ import MapCard from "./MapCard";
 import { useDispatch, useSelector } from "react-redux";
 import { restaurantAction } from "../redux/actions/restaurantAction";
 import { festivalAction } from "../redux/actions/festivalAction";
+import Nodata from "./Nodata";
 
 
 
@@ -64,8 +65,11 @@ const Map = ({item}) => {
                 margin: "auto"
                 }}>
             </div>
-
-            <MapCard item={item.RPRSNTV_MENU ? nearbyfesList : nearbyresList} />            
+                
+                    <MapCard item={item.RPRSNTV_MENU ? nearbyfesList : nearbyresList} /> 
+                    
+                
+                    
             
 
             
