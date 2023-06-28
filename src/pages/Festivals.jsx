@@ -5,7 +5,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import Pagination from "react-js-pagination";
 import FesCard from "../components/FesCard";
 import styled from "styled-components";
-import FesNodata from "../components/fesNodata";
+import Nodata from "../components/Nodata";
 
 
 
@@ -79,20 +79,23 @@ const Festivals = () => {
             
             <div className="card_Box">
                 {
-                    clickedBtn && fesfilterList.length >= 0 ? (
+                    clickedBtn && fesfilterList.length > 0 ? (
                     fesfilterList.map((item, i) => (
                         <div className="card_Box2" key={i}>
                             <FesCard item={item} />
                         </div>
                     
                     )) 
-                ) : festivalList.item && festivalList.item.length > 0 ? (
+                ) : clickedBtn && fesfilterList.length === 0 ?
+                        <Nodata/>
+
+                : festivalList.item && festivalList.item ? (
                     festivalList.item.map((item, i) => (
                         <div className="card_Box2" key={i}>
                             <FesCard item={item} />
                         </div>
                     ))
-                )  : <FesNodata/>
+                ) : null
                 }
             </div>
                 
