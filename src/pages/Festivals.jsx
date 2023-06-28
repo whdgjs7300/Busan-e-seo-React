@@ -5,6 +5,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 import Pagination from "react-js-pagination";
 import FesCard from "../components/FesCard";
 import styled from "styled-components";
+import FesNodata from "../components/fesNodata";
+
 
 
 
@@ -37,7 +39,7 @@ const Festivals = () => {
     },[pageNum, clickedBtn])
     
     // console.log(festivalList?.item[2].USAGE_DAY_WEEK_AND_TIME.split("")[6])
-   
+    
     const handleClick = (item) => {
             if (item === clickedBtn) {
             setClickedBtn("");
@@ -90,7 +92,8 @@ const Festivals = () => {
                             <FesCard item={item} />
                         </div>
                     ))
-                )  : null }
+                )  : <FesNodata/>
+                }
             </div>
                 
     <PaginationBox>

@@ -46,8 +46,7 @@ function getFesFilter(month) {
         
 
         const filteredList = fesfilterList.data.getFestivalKr.item.
-        filter((item)=>item.USAGE_DAY_WEEK_AND_TIME.includes(month) || 
-        item.USAGE_DAY_WEEK_AND_TIME.includes(month.split("월", 1))
+        filter((item)=>item.USAGE_DAY_WEEK_AND_TIME.includes(month)
         || item.USAGE_DAY.includes(month) 
         
         )

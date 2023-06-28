@@ -2,22 +2,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {  Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
-import FesDetail from './pages/FesDetail';
-import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import HomeNav from './components/HomeNav';
 import Festivals from './pages/Festivals';
 import FestivalNav from './components/FestivalNav';
 import Restaurant from './pages/Restaurant';
 import Footer from './components/Footer';
-import ResDetail from './pages/ResDetail';
 import titleIcon from "./Images/titleIcon.png";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FesPrivateRoute from './Routers/FesPrivateRoute';
 import ResPrivateRoute from './Routers/ResPrivateRoute';
 import LoginPrivateRoute from './Routers/LoginPrivateRoute';
-import ClipLoader from "react-spinners/ClipLoader";
 import LoginNav from './components/LoginNav';
 
 
@@ -41,6 +37,7 @@ function App() {
         top: 0,
         left: 0,
         zIndex: 1,
+        cursor : "pointer",
       }}>
         <img style={{ width: "135px", height: "135px" }} src={titleIcon} alt="" />
       </div>

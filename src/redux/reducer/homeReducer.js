@@ -1,7 +1,7 @@
 
 let initialState = {
     retaurantCardList : {}, // 홈페이지 resCard state
-    festivalBannerList : {},
+    festivalBannerList : {},// 홈페이지 fesBanner state
     loading : true,
     
 
