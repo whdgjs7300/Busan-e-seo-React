@@ -1,6 +1,5 @@
 
 let initialState = {
-    retaurantCardList : {},
     restaurantList : {},
     resfilterList : {},
     nearbyresList : [],
