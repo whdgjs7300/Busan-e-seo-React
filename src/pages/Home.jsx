@@ -4,8 +4,9 @@ import { festivalAction } from "../redux/actions/festivalAction";
 import BannerSlide from "../components/BannerSlide";
 import ClipLoader from "react-spinners/ClipLoader";
 import Busaninfo from "../components/BusanInfo";
-import HomeResInfo from "../components/HomeResInfo";
+
 import { homeAction } from "../redux/actions/homeAction";
+import HomeSearchCard from "../components/HomeSearchCard";
 
 
 const Home = () => {
@@ -27,7 +28,7 @@ const Home = () => {
         <div>
             
             <BannerSlide item={festivalBannerList}/>
-            <HomeResInfo item={retaurantCardList}/>
+            <HomeSearchCard item={retaurantCardList}/>
             <Busaninfo/>
         </div>
     );

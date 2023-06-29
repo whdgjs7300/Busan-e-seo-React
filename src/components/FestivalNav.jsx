@@ -1,10 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FestivalNav = () => {
 
     const [showSublist, setShowSublist] = useState(false);
-
+    const navigate = useNavigate();
 
     const handleSearchClick = () => {
         setShowSublist(!showSublist);
@@ -45,8 +46,10 @@ const FestivalNav = () => {
             </Nav.Link >
                     {showSublist && (
                     <ul>
-                        <li>축제 검색</li>
-                        <li>맛집 검색</li>
+                        <li style={{cursor : "pointer"}}
+                        onClick={()=>navigate('/fessearch')}>축제 검색</li>
+                        <li style={{cursor : "pointer"}}
+                        onClick={()=>navigate('/ressearch')}>맛집 검색</li>
                     </ul>
                 )}
             </Nav.Item>

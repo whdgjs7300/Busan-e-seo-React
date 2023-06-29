@@ -15,6 +15,8 @@ import FesPrivateRoute from './Routers/FesPrivateRoute';
 import ResPrivateRoute from './Routers/ResPrivateRoute';
 import LoginPrivateRoute from './Routers/LoginPrivateRoute';
 import LoginNav from './components/LoginNav';
+import FesSearch from './pages/FesSearch';
+import ResSearch from './pages/ResSearch';
 
 
 function App() {
@@ -54,6 +56,8 @@ function App() {
         <Route path='/restaurant/:id' element={<ResPrivateRoute/>}></Route>
         <Route path='/login' element={<LoginPrivateRoute/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
+        <Route path='/fessearch' element={<FesSearch/>}></Route>
+        <Route path='/ressearch' element={<ResSearch/>}></Route>
       </Routes>
       <Footer/>
     </div>
