@@ -45,10 +45,10 @@ const FestivalNav = () => {
                 검색하기
             </Nav.Link >
                     {showSublist && (
-                    <ul>
-                        <li style={{cursor : "pointer"}}
+                    <ul style={{marginTop : "10px"}}>
+                        <li style={{cursor : "pointer", fontWeight : "500", fontSize:"15px",margin: "10px"}}
                         onClick={()=>navigate('/fessearch')}>축제 검색</li>
-                        <li style={{cursor : "pointer"}}
+                        <li style={{cursor : "pointer", fontWeight : "500", fontSize:"15px",margin: "10px"}}
                         onClick={()=>navigate('/ressearch')}>맛집 검색</li>
                     </ul>
                 )}

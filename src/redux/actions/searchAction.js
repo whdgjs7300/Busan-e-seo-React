@@ -29,6 +29,31 @@ function getFesSearch(keyWord) {
     }
 }
 
+
+function getResSearch(keyWord) {
+    return async(dispach) => {
+        try {
+            dispach({type : "GET_SEARCH_REQUEST" })
+
+        const resSearchApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=271&resultType=json`)
+
+        let [resSearchList] = await Promise.all([resSearchApi,])
+
+        let resKeyWord = resSearchList.data.getFoodKr.item.filter((item) => item.TITLE.includes(keyWord));
+            
+        dispach({
+            type : "GET_RESSEARCH_SUCCESS", 
+            payload : {
+                resSearchList : resKeyWord,
+            }
+        })
+        }
+        catch(error) {
+            dispach({type : "GET_SEARCH_FAILURE" })
+        }
+    }
+}
+
 export const searchAction = {
-    getFesSearch,
+    getFesSearch, getResSearch
 }

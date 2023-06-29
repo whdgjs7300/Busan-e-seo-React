@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import FesCard from "../components/FesCard";
 import { searchAction } from "../redux/actions/searchAction";
-import HomeSearchCard from "../components/HomeSearchCard";
+
+import SearchCard from "../components/FesSearchCard";
+import FesSearchCard from "../components/FesSearchCard";
 
 const FesSearch = () => {
 
@@ -13,7 +14,8 @@ const FesSearch = () => {
     const {loading, fesSearchList} = useSelector((state)=> state.search)
     const dispatch = useDispatch();
 
-    const handleSearch = () => {
+    const handleSearch = (event) => {
+        event.preventDefault();
         setSearchOn(true);
         setKeyWord(searchText)
         dispatch(searchAction.getFesSearch(keyWord))
@@ -25,22 +27,27 @@ const FesSearch = () => {
     },[keyWord])
     console.log(fesSearchList)
     return ( 
-        <div className="fesSearch_container">
-            <h1>축제 검색</h1>
-            <div>
-                <input
-                    type="text"
-                    value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
-                    placeholder="검색어를 입력하세요"
-                />
-                <button onClick={handleSearch}>검색</button>
-            </div>
-            {
-                searchOn ? <HomeSearchCard item={fesSearchList}/> :<div>
-                    
+        <div className="search_container">
+            <div className="search_Box">
+                <h1>축제 검색</h1>
+                <form className="search_form"
+                onSubmit={handleSearch}>
+                    <input
+                        type="text"
+                        value={searchText}
+                        onChange={(e) => setSearchText(e.target.value)}
+                        placeholder="검색어를 입력하세요"
+
+                    />
+                    <button >검색</button>
+                </form>
+                {
+                    searchOn ? <FesSearchCard loading={loading} keyWord={keyWord} item={fesSearchList}/> :<div >
+                        
+                    </div>
+                }
+                
                 </div>
-            }
             
         </div>
     );

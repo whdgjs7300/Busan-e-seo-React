@@ -1,5 +1,6 @@
 const initialState = {
     fesSearchList : [],
+    resSearchList : [],
     loading : true,
 };
     
@@ -10,6 +11,12 @@ const initialState = {
             return {
                 ...state,  
                 fesSearchList : payload.fesSearchList,  
+                loading : false,
+            }
+        case 'GET_RESSEARCH_SUCCESS' : 
+            return {
+                ...state,  
+                resSearchList : payload.resSearchList,  
                 loading : false,
             }
         case "GET_SEARCH_REQUEST" :

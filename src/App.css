@@ -478,3 +478,40 @@ a {
 
 
 
+/* Search Component CSS */
+
+.search_container {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.search_Box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+}
+
+.search_container h1{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+}
+.search_form{
+    margin-top: 50px;
+}
+.search_form input{
+    padding: 10px;
+    margin-right: 2px;
+}
+
+.search_form button{
+    border: solid 1px black;
+    padding: 10px;
+    font-weight: 500;
+    background-color: #FFA500;
+    color: white;
+}

@@ -6,7 +6,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import Busaninfo from "../components/BusanInfo";
 
 import { homeAction } from "../redux/actions/homeAction";
-import HomeSearchCard from "../components/HomeSearchCard";
+import HomeCard from "../components/HomeCard";
 
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
         <div>
             
             <BannerSlide item={festivalBannerList}/>
-            <HomeSearchCard item={retaurantCardList}/>
+            <HomeCard item={retaurantCardList}/>
             <Busaninfo/>
         </div>
     );
