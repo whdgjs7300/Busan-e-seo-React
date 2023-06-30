@@ -26,6 +26,24 @@ const FesDetail = () => {
     const handleItemClick = (item) => {
         setActiveComponent(item);
     };
+    // 기본 버튼 스타일
+    const buttonStyles = {
+
+        padding: "10px 20px",
+        border: "none",
+        background: "transparent",
+        cursor: "pointer",
+        borderBottom: "1px solid black",
+        fontWeight: "600",
+        fontSize : "20px"
+    };
+    // 클릭 버튼 스타일
+    const activeButtonStyles = {
+        ...buttonStyles,
+        color : "#FFA500",
+        borderBottom: "3px solid #FFA500",
+        
+    };
 
     console.log(fesDetailList)
 
@@ -51,12 +69,18 @@ const FesDetail = () => {
             </div>
 
                 <DetailInfo item={fesDetailList}/>
+
+                <div className="detail_nav_box">
                 {
                     detailNav.map((item)=>{
-                        return <button style={{margin :"40px 30px"}}
+                        return <button style={activeComponent === item ? activeButtonStyles : buttonStyles}
                         onClick={()=>handleItemClick(item)}>{item}</button>
+
+
                     })
                 }
+                </div>
+                
                 <div style={{marginBottom : "50px"}}>
                 {/* 컴포넌트 조건부 렌더링 */}
                 {activeComponent === "상세정보" && <DetailInfo2 item={fesDetailList} />}
