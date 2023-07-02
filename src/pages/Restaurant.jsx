@@ -5,6 +5,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import ResCard from "../components/ResCard";
 import Pagination from "react-js-pagination";
 import styled from "styled-components";
+import Nodata from "../components/Nodata";
 
 
 
@@ -47,9 +48,7 @@ const Restaurant = () => {
     
 
 
-    if(loading){
-        return <ClipLoader color="#ffff" loading={loading} size={150}/>
-    }
+    
     return ( 
         <div className="banner_container">
             <div className="res_banner"
@@ -71,38 +70,44 @@ const Restaurant = () => {
             }
             </div>
 
-            <div className="card_Box">
-                {(clickedBtn && resfilterList.length > 0) ? (
-                    resfilterList.map((item, i) => (
-                    <div className="card_Box2" key={i}>
-                        <ResCard item={item}  />
-                    </div>
-                    ))
+            {
+                loading ? (
+                    <ClipLoader color="#ffff" loading={loading} size={150} />
                 ) : (
-                    restaurantList.item.map((item, i) => (
-                    <div className="card_Box2" key={i}>
-                        <ResCard item={item}  />
+                    <div className="card_Box">
+                    {clickedBtn && resfilterList.length > 0 ? (
+                        resfilterList.map((item, i) => (
+                        <div className="card_Box2" key={i}>
+                            <ResCard item={item} />
+                        </div>
+                        ))
+                    ) : clickedBtn && resfilterList.length === 0 ? (
+                        <Nodata />
+                    ) : restaurantList.item && restaurantList.item ? (
+                        restaurantList.item.map((item, i) => (
+                        <div className="card_Box2" key={i}>
+                            <ResCard item={item} />
+                        </div>
+                        ))
+                    ) : null}
                     </div>
-                    ))
+                )
+                }
+
+                <PaginationBox>
+                {clickedBtn && resfilterList.length >= 0 ? null : (
+                    <Pagination
+                    activePage={pageNum}
+                    itemsCountPerPage={10}
+                    totalItemsCount={restaurantList.totalCount}
+                    pageRangeDisplayed={5}
+                    onChange={handlePageChange}
+                    itemClass="page-item"
+                    linkClass="page-link"
+                    />
                 )}
-                </div>
-
-        
-<PaginationBox>
-
-{ // 필터된 데이터는 페이지 네이션 적용 시키지 않음 : 데이터의 수가 대부분 작음}
-clickedBtn && resfilterList.length > 0 ? null : (
-    <Pagination
-        activePage={pageNum}
-        itemsCountPerPage={10}
-        totalItemsCount={restaurantList.totalCount}
-        pageRangeDisplayed={5}
-        onChange={handlePageChange}
-        itemClass="page-item"
-        linkClass="page-link"
-    />
-)}
 </PaginationBox>
+
     
 </div>
         </div>

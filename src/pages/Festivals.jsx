@@ -51,9 +51,7 @@ const Festivals = () => {
         };
         console.log(fesfilterList)
 
-    if(loading){
-        return <ClipLoader color="#ffff" loading={loading} size={150}/>
-    }
+    
     return ( 
         <div className="banner_container">
             <div 
@@ -76,43 +74,44 @@ const Festivals = () => {
                 })
             }
             </div>
-            
-            <div className="card_Box">
-                {
-                    clickedBtn && fesfilterList.length > 0 ? (
-                    fesfilterList.map((item, i) => (
+            {
+                loading ? (
+                    <ClipLoader color="#ffff" loading={loading} size={150} />
+                ) : (
+                    <div className="card_Box">
+                    {clickedBtn && fesfilterList.length > 0 ? (
+                        fesfilterList.map((item, i) => (
                         <div className="card_Box2" key={i}>
                             <FesCard item={item} />
                         </div>
-                    
-                    )) 
-                ) : clickedBtn && fesfilterList.length === 0 ?
-                        <Nodata/>
-
-                : festivalList.item && festivalList.item ? (
-                    festivalList.item.map((item, i) => (
+                        ))
+                    ) : clickedBtn && fesfilterList.length === 0 ? (
+                        <Nodata />
+                    ) : festivalList.item && festivalList.item ? (
+                        festivalList.item.map((item, i) => (
                         <div className="card_Box2" key={i}>
                             <FesCard item={item} />
                         </div>
-                    ))
-                ) : null
+                        ))
+                    ) : null}
+                    </div>
+                )
                 }
-            </div>
-                
-    <PaginationBox>
-    { // 필터된 데이터는 페이지 네이션 적용 시키지 않음 : 데이터의 수가 대부분 작음}
-    clickedBtn && fesfilterList.length >= 0 ? null : (
-    <Pagination
-        activePage={pageNum}
-        itemsCountPerPage={10}
-        totalItemsCount={festivalList.totalCount}
-        pageRangeDisplayed={5}
-        onChange={handlePageChange}
-        itemClass="page-item"
-        linkClass="page-link"
-    />
-)}
-    </PaginationBox>
+
+                <PaginationBox>
+                {clickedBtn && fesfilterList.length >= 0 ? null : (
+                    <Pagination
+                    activePage={pageNum}
+                    itemsCountPerPage={10}
+                    totalItemsCount={festivalList.totalCount}
+                    pageRangeDisplayed={5}
+                    onChange={handlePageChange}
+                    itemClass="page-item"
+                    linkClass="page-link"
+                    />
+                )}
+</PaginationBox>
+
     
 </div>
         </div>
