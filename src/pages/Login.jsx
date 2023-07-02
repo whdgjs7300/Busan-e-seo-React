@@ -54,6 +54,8 @@ const Login = () => {
                 console.log(data); // console에 UserCredentialImpl 출력
                 // 로그인 상태를 로컬 스토리지에 저장
                 localStorage.setItem('isLoggedIn', 'true');
+                            // 유저 이름 로컬 스토리지 저장
+            localStorage.setItem('userName', data.user.displayName);
                 navigate('/')
             })
             .catch((err) => {
