@@ -53,7 +53,7 @@ const Festivals = () => {
 
     
     return ( 
-        <div className="banner_container">
+        <div className="fes_container">
             <div 
             className="res_banner"
         style={{backgroundImage:

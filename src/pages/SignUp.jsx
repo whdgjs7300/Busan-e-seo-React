@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { firebaseAuth , createUserWithEmailAndPassword } from "../firebase";
+import { firebaseAuth , createUserWithEmailAndPassword,updateProfile  } from "../firebase";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 
 
@@ -12,18 +13,26 @@ const SignUp = () => {
     const [registerPassword, setRegisterPassword] = useState("");
     const [registerName, setRegisterName] = useState("");
     const [errorMsg, setErrorMsg] = useState("　");
+    const {name} = useSelector((state)=> state.user)
 
+    const dispatch = useDispatch();
 
     // `회원가입` 버튼의 onClick에 할당
 const register = async () => {
     try {
         setErrorMsg('　');
-        const createdUser = await createUserWithEmailAndPassword(firebaseAuth, registerEmail, registerPassword);
+        const createdUser = await createUserWithEmailAndPassword(firebaseAuth, registerEmail, registerPassword, );
+        
+        await updateProfile(createdUser.user, {
+            displayName: registerName
+        });
         //console.log(createdUser);
+
         setRegisterEmail("");
         setRegisterPassword("");
         navigate('/login')
         console.log(createdUser);
+        
         
         } catch(err){
         //console.log(err.code);

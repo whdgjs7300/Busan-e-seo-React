@@ -11,12 +11,15 @@ const LoginNav = () => {
     const dispatch = useDispatch();
     console.log(isLoggedin)
 
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    
+    const userName = localStorage.getItem('userName');
+
+
+
     const handleLogout = () => {
         localStorage.setItem('isLoggedIn', 'false');
         
     };
+    
 
 
     return ( 
@@ -28,7 +31,8 @@ const LoginNav = () => {
                 borderBottom : "1px solid #D3D3D3",
                 margin : "auto",
                 paddingBottom : "8px",
-                paddingTop: "4px"
+                paddingTop: "4px",
+                alignItems: "center",
             }}>
             <Nav.Item>
                 <Nav.Link href='/'>HOME</Nav.Link>
@@ -39,8 +43,8 @@ const LoginNav = () => {
             </Nav.Item>
 
             <Nav.Item>
-            <Nav.Link eventKey="disabled" disabled>
-                Disabled
+            <Nav.Link  disabled>
+                {userName}님 환영합니다.
             </Nav.Link>
             </Nav.Item>
             

@@ -14,14 +14,16 @@ const Login = () => {
 
 
 
-    
+
     // 일반 로그인 실행 함수
     const userLogin = async () => {
         try {
             const curUserInfo = await signInWithEmailAndPassword(firebaseAuth, typingEmail, typingPassword);
             console.log(curUserInfo);
-            // setUser(curUserInfo.user);
+
             navigate('/')
+            // 유저 이름 로컬 스토리지 저장
+            localStorage.setItem('userName', curUserInfo.user.displayName);
             // 로그인 상태를 로컬 스토리지에 저장
             localStorage.setItem('isLoggedIn', 'true');
             } catch(err){

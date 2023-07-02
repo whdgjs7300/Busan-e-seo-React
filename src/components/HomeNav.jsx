@@ -2,7 +2,7 @@ import Nav from 'react-bootstrap/Nav';
 import '../CSS/Nav.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+
 
 const HomeNav = () => {
 
@@ -11,13 +11,6 @@ const HomeNav = () => {
     const dispatch = useDispatch();
     console.log(isLoggedin)
 
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    
-    const handleLogout = () => {
-        localStorage.setItem('isLoggedIn', 'false');
-        navigate('/')
-        
-    };
 
 
     return ( 
@@ -41,9 +34,7 @@ const HomeNav = () => {
                 <Nav.Link href="/signup">회원가입</Nav.Link> 
             </Nav.Item>
             <Nav.Item>
-            <Nav.Link eventKey="disabled" disabled>
-                Disabled
-            </Nav.Link>
+
             </Nav.Item>
             
         </Nav>

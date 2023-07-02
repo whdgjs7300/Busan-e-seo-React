@@ -1,15 +1,16 @@
 const initialState = {
+    name : "",
+
     
-    loginLoading : false,
 };
     
     const userReducer = (state = initialState, action) => {
         let {type, payload} = action
         switch (type) {
-        case 'LOGIN_SUCCESS' : 
+        case 'GET_USER_NAME' : 
             return {
                 ...state,     
-                loginLoading : false,
+                name : payload,
             }
         case 'LOGOUT':
             return {

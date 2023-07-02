@@ -13,13 +13,13 @@ const Home = () => {
 
     const dispatch = useDispatch();
     const {festivalBannerList, loading, retaurantCardList} = useSelector(state => state.home )
-
+    const {name} = useSelector(state=>state.user)
 
     useEffect(()=>{
         dispatch(homeAction.getHomeData());
     },[])
 
-
+    console.log(name)
 
     if(loading){
         return <ClipLoader color="#ffff" loading={loading} size={150}/>

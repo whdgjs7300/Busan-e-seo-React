@@ -50,7 +50,7 @@ const Restaurant = () => {
 
     
     return ( 
-        <div className="banner_container">
+        <div className="fes_container">
             <div className="res_banner"
         style={{backgroundImage:
             'url('+`https://res.klook.com/image/upload/Mobile/City/g9ynzkjz1nsrvhrjml4j.jpg`+')',   
