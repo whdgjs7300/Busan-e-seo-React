@@ -10,7 +10,9 @@ import Nodata from "../components/Nodata";
 
 
 
+
 const Restaurant = () => {
+
     const gu = [
         '동래구', '금정구', '기장군', '연제구', '해운대구', '수영구', '남구', '부산진구',
         '북구', '사상구', '서구', '동구', '중구', '영도구', '사하구', '강서구'
@@ -72,7 +74,8 @@ const Restaurant = () => {
 
             {
                 loading ? (
-                    <ClipLoader color="#ffff" loading={loading} size={150} />
+                    <ClipLoader 
+                    color="#ffff" loading={loading} size={150} />
                 ) : (
                     <div className="card_Box">
                     {clickedBtn && resfilterList.length > 0 ? (

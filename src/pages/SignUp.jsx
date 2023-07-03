@@ -59,6 +59,7 @@ const register = async () => {
                 <input type="text" placeholder="example@nav.com" onChange={(e)=>{setRegisterEmail(e.target.value)}}/>
                 <input type="password" placeholder="비밀번호를 입력하세요." onChange={ (e)=>{setRegisterPassword(e.target.value)}} />
                 <input type="text" placeholder="이름을 입력하세요." onChange={ (e)=>{setRegisterName(e.target.value)}} />
+                <p>{errorMsg}</p>
                 <input type="submit" value="회원가입" />
                 
             </form>
