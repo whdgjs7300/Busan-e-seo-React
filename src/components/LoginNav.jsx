@@ -2,7 +2,6 @@ import Nav from 'react-bootstrap/Nav';
 import '../CSS/Nav.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const LoginNav = () => {
 
@@ -23,7 +22,7 @@ const LoginNav = () => {
 
 
     return ( 
-        
+        <div className='login_nav_container'>
             <Nav style={{
                 display:"flex",
                 justifyContent : "flex-end",
@@ -33,7 +32,7 @@ const LoginNav = () => {
                 paddingBottom : "8px",
                 paddingTop: "4px",
                 alignItems: "center",
-            }}>
+            }} >
             <Nav.Item>
                 <Nav.Link href='/'>HOME</Nav.Link>
             </Nav.Item>
@@ -49,6 +48,8 @@ const LoginNav = () => {
             </Nav.Item>
             
         </Nav>
+        </div>
+            
         
         
         

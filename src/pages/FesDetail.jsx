@@ -51,7 +51,7 @@ const FesDetail = () => {
         return <ClipLoader color="#ffff" loading={loading} size={150}/>
     }
     return (  
-        <div>
+        <div className="detail_container">
             <div className="detail_title_box">
                 <h1>{fesDetailList.TITLE}</h1>
                 <p>{// split('\n') 함수를 사용하여 줄바꿈 문자('\n')를 기준으로 분할한 후에 인덱스 0을 사용하여 첫 번째 줄만 표시
@@ -69,7 +69,6 @@ const FesDetail = () => {
             </div>
 
                 <DetailInfo item={fesDetailList}/>
-
                 <div className="detail_nav_box">
                 {
                     detailNav.map((item)=>{

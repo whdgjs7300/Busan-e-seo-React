@@ -37,7 +37,7 @@ const ResDetail = () => {
         fontWeight: "600",
         fontSize : "20px"
     };
-    
+    // 클릭 버튼 스타일
     const activeButtonStyles = {
         ...buttonStyles,
         color : "#FFA500",
@@ -51,7 +51,7 @@ const ResDetail = () => {
         return <ClipLoader color="#ffff" loading={loading} size={150}/>
     }
     return (  
-        <div >
+        <div className="detail_container">
             <div className="detail_title_box">
                 <h1>{resDetailList.TITLE}</h1>
                 <p>{// split('\n') 함수를 사용하여 줄바꿈 문자('\n')를 기준으로 분할한 후에 인덱스 0을 사용하여 첫 번째 줄만 표시
