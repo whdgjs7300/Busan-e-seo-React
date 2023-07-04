@@ -528,3 +528,29 @@ a {
     background-color: #FFA500;
     color: white;
 }
+
+
+/* 반응형 CSS */
+
+@media (max-width: 768px) {
+    .banner{
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+    }
+    .banner_info {
+        height: 70%;
+        width: 50%;
+        margin: auto;
+    }
+
+
+    .busan_info_container{
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        
+        
+    }
+    
+    }
