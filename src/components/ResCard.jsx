@@ -6,7 +6,8 @@ const ResCard = ({ item}) => {
     const navigate = useNavigate();
 
     return (
-    <Card onClick={()=>navigate(`/restaurant/${item.UC_SEQ}`)}
+        <div className='card_container'>
+            <Card onClick={()=>navigate(`/restaurant/${item.UC_SEQ}`)}
     style={{ 
         width: '14rem',
         padding : "10px 15px" ,
@@ -63,6 +64,8 @@ const ResCard = ({ item}) => {
             
         </Card.Body>
     </Card>
+        </div>
+    
     );
 }
 

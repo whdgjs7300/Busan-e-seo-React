@@ -64,10 +64,11 @@ const Festivals = () => {
             
             {
                 month.map((item)=>{
-                    return <div onClick={()=>
+                    return <div
+                    onClick={()=>
                         handleClick(item)
                     } key={item} 
-                    className={clickedBtn === item ? "clicked" : ""}
+                    className={clickedBtn === item ? "clicked" : "month_btn"}
                     >{item}</div>
                     
                     

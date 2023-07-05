@@ -7,7 +7,8 @@ const FesCard = ({item}) => {
     const navigate = useNavigate();
 
     return (  
-        <Card onClick={()=>navigate(`/festivals/${item.UC_SEQ}`)}
+        <div className='card_container'>
+            <Card onClick={()=>navigate(`/festivals/${item.UC_SEQ}`)}
         style={{ 
             width: '14rem',
             padding : "10px 15px" ,
@@ -66,6 +67,8 @@ const FesCard = ({item}) => {
                 
             </Card.Body>
         </Card>
+        </div> 
+        
     );
 }
 
