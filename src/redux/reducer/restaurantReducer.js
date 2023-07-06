@@ -3,7 +3,7 @@ let initialState = {
     restaurantList : {},
     resfilterList : {},
     nearbyresList : [],
-    loading : true,
+    resloading : true,
     
 
 };
@@ -13,24 +13,24 @@ function festivalReducer(state=initialState, action) {
     switch(type) {
         case "GET_RESTAURANT_SUCCESS" :
             return {...state, 
-            loading: false,
+            resloading: false,
             restaurantList : payload.restaurantList,
             } 
         case "GET_RESTAURANT_FILTER" :
             return {...state,
-                loading: false,
+                resloading: false,
                 resfilterList : payload.resfilterList
             }
         case "GET_NEARBYRES_SUCCESS" :
             return {...state, 
-            loading: false,
+            resloading: false,
             nearbyresList : payload.nearbyresList,
     
             } 
         case "GET_RESTAURANT_REQUEST" :
-            return {...state, loading : true}
+            return {...state, resloading : true}
         case "GET_RESTAURANT_FAILURE" : 
-            return {...state, loading : false}   
+            return {...state, resloading : false}   
 
         default :
             return {...state};    

@@ -18,7 +18,7 @@ const Restaurant = () => {
         '북구', '사상구', '서구', '동구', '중구', '영도구', '사하구', '강서구'
                 ]
     const dispatch = useDispatch();
-    const {restaurantList, loading, resfilterList} = useSelector(state => state.restaurant);
+    const {restaurantList, resloading, resfilterList} = useSelector(state => state.restaurant);
     // 클릭 시 css 코드 수정 state
     const [clickedBtn, setClickedBtn] = useState("");
 
@@ -73,9 +73,9 @@ const Restaurant = () => {
             </div>
 
             {
-                loading ? (
+                resloading ? (
                     <ClipLoader 
-                    color="#ffff" loading={loading} size={150} />
+                    color="#ffff" loading={resloading} size={150} />
                 ) : (
                     <div className="card_Box">
                     {clickedBtn && resfilterList.length > 0 ? (

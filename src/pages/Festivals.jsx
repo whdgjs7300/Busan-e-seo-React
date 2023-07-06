@@ -16,7 +16,7 @@ const Festivals = () => {
         "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"
                 ]
     const dispatch = useDispatch();
-    const {festivalList,fesfilterList, loading} = useSelector(state => state.festival);
+    const {festivalList,fesfilterList, fesloading} = useSelector(state => state.festival);
     // 클릭 시 css 코드 수정 state
     const [clickedBtn, setClickedBtn] = useState("");
 
@@ -76,8 +76,8 @@ const Festivals = () => {
             }
             </div>
             {
-                loading ? (
-                    <ClipLoader color="#ffff" loading={loading} size={150} />
+                fesloading ? (
+                    <ClipLoader color="#ffff" loading={fesloading} size={150} />
                 ) : (
                     <div className="card_Box">
                     {clickedBtn && fesfilterList.length > 0 ? (

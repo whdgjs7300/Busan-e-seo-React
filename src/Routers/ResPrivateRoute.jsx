@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import ResDetail from "../pages/ResDetail";
 import { Navigate } from "react-router-dom";
 

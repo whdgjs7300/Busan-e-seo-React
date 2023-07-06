@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { firebaseAuth , signInWithEmailAndPassword} from "../firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { Link,useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [typingEmail, setTypingEmail] = useState();

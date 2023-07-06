@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import FesCard from "../components/FesCard";
 import { searchAction } from "../redux/actions/searchAction";
-import ClipLoader from "react-spinners/ClipLoader";
-import SearchCard from "../components/FesSearchCard";
 import ResSearchCard from "../components/ResSearchCard";
 
 const ResSearch = () => {

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import MapCard from "./MapCard";
 import { useDispatch, useSelector } from "react-redux";
 import { restaurantAction } from "../redux/actions/restaurantAction";
 import { festivalAction } from "../redux/actions/festivalAction";
-import Nodata from "./Nodata";
+
 
 
 
@@ -12,8 +12,8 @@ const { kakao } = window;
 const Map = ({item}) => {
 
     const dispatch = useDispatch();
-    const {nearbyfesList, loading} = useSelector((state)=>state.festival)
-    const {nearbyresList } = useSelector((state)=>state.restaurant)
+    const {nearbyfesList, fesloading} = useSelector((state)=>state.festival)
+    const {nearbyresList, resloading } = useSelector((state)=>state.restaurant)
 
     // 비동기 데이터 호출
     useEffect(()=>{
@@ -66,7 +66,7 @@ const Map = ({item}) => {
                 }}>
             </div>
                 
-                    <MapCard item={item.RPRSNTV_MENU ? nearbyfesList : nearbyresList} /> 
+                    <MapCard  item={item.RPRSNTV_MENU ? nearbyfesList : nearbyresList} /> 
                     
                 
                     

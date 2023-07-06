@@ -1,17 +1,15 @@
 import Nav from 'react-bootstrap/Nav';
 import '../CSS/Nav.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 
 const HomeNav = () => {
 
     const {isLoggedin} = useSelector(state=>state.user)
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
     console.log(isLoggedin)
 
-
+    
 
     return ( 
         

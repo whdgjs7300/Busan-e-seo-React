@@ -2,7 +2,6 @@ import Nav from 'react-bootstrap/Nav';
 import { useState } from 'react';
 import { useNavigate, Link} from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
 import '../CSS/Nav.css';
 
 const FestivalNav = () => {
