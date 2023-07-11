@@ -28,7 +28,7 @@ const FesCard = ({item}) => {
             <Card.Body style={{
                 padding : "10px 0",
                 textAlign : "center"
-            }}>
+            }}> 
                 <Card.Title style={{
                     fontSize : "18px",
                     fontWeight : "bold",
@@ -42,29 +42,46 @@ const FesCard = ({item}) => {
                     textOverflow : "ellipsis",
                     whiteSpace : "nowrap",
                 }}>
-                    
                         <p style={{
                             fontSize : "14px",
                             fontWeight : "600"
                         }}>주소</p> 
                         {!item.ADDR1 ? item.GUGUN_NM : item.ADDR1}
+                </Card.Text>
                         <hr />
-                        <p style={{
-                            fontSize : "14px",
-                            fontWeight : "600"
-                        }}>축제 장소 </p> 
-                        {!item.MAIN_PLACE ? item.PLACE : item.MAIN_PLACE}
+                <Card.Text style={{
+                    marginTop : "10px",
+                    fontSize : "12px",
+                    overflow : "hidden",
+                    textOverflow : "ellipsis",
+                    whiteSpace : "nowrap",
+                }}>
+                    <p style={{
+                                fontSize : "14px",
+                                fontWeight : "600"
+                            }}>축제 장소 </p> 
+                            {!item.MAIN_PLACE ? item.PLACE : item.MAIN_PLACE}
+                            
+                </Card.Text>
                         <hr />
-                        <p style={{
+                <Card.Text style={{
+                    marginTop : "10px",
+                    fontSize : "12px",
+                    overflow : "hidden",
+                    textOverflow : "ellipsis",
+                    whiteSpace : "nowrap",
+                }}>
+                    <p style={{
                             fontSize : "14px",
                             fontWeight : "600"
                         }}>축제기간</p>
                         {
                         !item.USAGE_DAY_WEEK_AND_TIME ? "미정" : item.USAGE_DAY_WEEK_AND_TIME 
                         }
-                    
-                </Card.Text>
                 
+                </Card.Text>
+                        
+                    
             </Card.Body>
         </Card>
         </div> 

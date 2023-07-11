@@ -45,7 +45,6 @@ const ResDetail = () => {
         
     };
 
-    console.log(resDetailList)
 
     if(loading){
         return <ClipLoader color="#ffff" loading={loading} size={150}/>
@@ -72,7 +71,7 @@ const ResDetail = () => {
                 <div className="detail_nav_box">
                 {
                     detailNav.map((item)=>{
-                        return <button style={activeComponent === item ? activeButtonStyles : buttonStyles}
+                        return <button key={item} style={activeComponent === item ? activeButtonStyles : buttonStyles}
                         onClick={()=>handleItemClick(item)}>{item}</button>
 
 

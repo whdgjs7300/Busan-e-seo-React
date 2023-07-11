@@ -12,10 +12,6 @@ const FestivalNav = () => {
     const [showSublist, setShowSublist] = useState(false);
     const navigate = useNavigate();
 
-    const handleShowClick = () => {
-        setShowMenu(!showMenu);
-    }
-
     const handleSearchClick = () => {
         setShowSublist(!showSublist);
     };

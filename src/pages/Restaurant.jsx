@@ -37,7 +37,6 @@ const Restaurant = () => {
         dispatch(restaurantAction.getRestaurantParam(pageNum))
     }
     },[ pageNum])
-    console.log(restaurantList);
 
     const handleClick = (item) => {
             if (item === clickedBtn) {
@@ -60,10 +59,10 @@ const Restaurant = () => {
             <div className="gu_btn_box">
             
             {
-                gu.map((item)=>{
+                gu.map((item,i)=>{
                     return <div onClick={()=>
                         handleClick(item)
-                    } key={item} 
+                    } key={i} 
                     className={clickedBtn === item ? "clicked" : ""}
                     >{item}</div>
                     

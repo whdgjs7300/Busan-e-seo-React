@@ -9,7 +9,8 @@ const DetailInfo2 = ({item}) => {
         }}>{item.SUBTITLE || item.PLACE}</h2>
             <p>{ // 문자열을 줄바꿈 문자('\n')을 기준으로 분할
             item.ITEMCNTNTS.split('\n').map((line, i) =>
-                <span style={{
+                <span key={i}
+                style={{
                     fontWeight : "500",
                     display : "inline-block",
                     marginTop : "50px"

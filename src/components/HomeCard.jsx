@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 
 const HomeCard = ({item}) => {
-    console.log(item)
+
     const navigete = useNavigate();
 
     const StyledCard = styled(Card)`

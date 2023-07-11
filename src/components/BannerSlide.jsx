@@ -17,7 +17,7 @@ const BannerSlide = ({item}) => {
         pauseOnHover: true,
         
     };
-    console.log(item)
+
 
     return ( 
         <Slider {...settings}>

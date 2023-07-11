@@ -51,7 +51,6 @@ const Map = ({item}) => {
         position : iwPosition, 
         content : iwContent 
     });
-    console.log(markerPosition)
     infowindow.open(map, marker); 
     }, []);
     

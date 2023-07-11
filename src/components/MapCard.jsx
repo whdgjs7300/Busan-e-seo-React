@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const MapCard = ({item }) => {
     
-    console.log(item)
+
     const navigate = useNavigate();
 
     

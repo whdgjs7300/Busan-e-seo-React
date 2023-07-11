@@ -26,7 +26,7 @@ const ResSearch = () => {
     useEffect(()=>{
         dispatch(searchAction.getResSearch(keyWord))
     },[keyWord])
-    console.log(resSearchList)
+
     return ( 
         <div className="search_container">
             <div className="search_Box">

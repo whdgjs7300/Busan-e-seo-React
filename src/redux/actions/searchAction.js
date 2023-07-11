@@ -12,7 +12,7 @@ function getFesSearch(keyWord) {
         const fesSearchApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=32&resultType=json`);
 
         let [fesSearchList] = await Promise.all([fesSearchApi,])
-        console.log(fesSearchList)
+
         let fesKeyWord = fesSearchList.data.getFestivalKr.item.filter((item) => item.TITLE.includes(keyWord));
             
         dispach({

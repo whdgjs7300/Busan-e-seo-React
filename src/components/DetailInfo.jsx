@@ -1,7 +1,7 @@
 
 
 const DetailInfo = ({item}) => {
-    console.log(item)
+
     // USAGE_AMOUNT 데이터는 축제데이터엔 포함, 맛집데이터엔 미 포함 
     // 이정보로 구분
     return ( 

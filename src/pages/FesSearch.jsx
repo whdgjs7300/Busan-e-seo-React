@@ -23,7 +23,7 @@ const FesSearch = () => {
     useEffect(()=>{
         dispatch(searchAction.getFesSearch(keyWord))
     },[keyWord])
-    console.log(fesSearchList)
+
     return ( 
         <div className="search_container">
             <div className="search_Box">
