@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D"
-
-
+const API_KEY=process.env.REACT_APP_API_KEY
 
 // 키워드별 축제를 필터해주는 함수
 
@@ -11,7 +9,7 @@ function getFesSearch(keyWord) {
         try {
             dispach({type : "GET_SEARCH_REQUEST" })
 
-        const fesSearchApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=32&resultType=json`);
+        const fesSearchApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=32&resultType=json`);
 
         let [fesSearchList] = await Promise.all([fesSearchApi,])
         console.log(fesSearchList)
@@ -37,7 +35,7 @@ function getResSearch(keyWord) {
         try {
             dispach({type : "GET_SEARCH_REQUEST" })
 
-        const resSearchApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=271&resultType=json`)
+        const resSearchApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=271&resultType=json`)
 
         let resSearchList = await resSearchApi.data.getFoodKr.item.filter((item) => item.TITLE.includes(keyWord));
 

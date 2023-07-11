@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D"
+const API_KEY=process.env.REACT_APP_API_KEY
 
 // ID별 축제 디테일 페이지 출력하는 함수
 
@@ -10,7 +10,7 @@ function getFesDetail(id,) {
         try {
             dispatch({type : "GET_FESDETAIL_REQUEST" })
 
-        const fesDetailApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json&UC_SEQ=${id}`);
+        const fesDetailApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=10&resultType=json&UC_SEQ=${id}`);
 
 
         const fesDetailList = fesDetailApi.data.getFestivalKr.item[0];
@@ -37,7 +37,7 @@ function getResDetail(id,) {
         try {
             dispach({type : "GET_RESDETAIL_REQUEST" })
 
-            const resDetailApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json&UC_SEQ=${id}`);
+            const resDetailApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=10&resultType=json&UC_SEQ=${id}`);
         
         let resDetailList = resDetailApi.data.getFoodKr.item[0]
             

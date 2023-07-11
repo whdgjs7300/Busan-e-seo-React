@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D"
+const API_KEY=process.env.REACT_APP_API_KEY
 
 
 
@@ -14,7 +14,7 @@ function getFestivalParam(pageNum ) {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const festivalApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&numOfRows=10&pageNo=${pageNum}&resultType=json`)
+        const festivalApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&numOfRows=10&pageNo=${pageNum}&resultType=json`)
 
 
         let festivalList = festivalApi.data.getFestivalKr;
@@ -40,7 +40,7 @@ function getFesFilter(month) {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const fesFiltertApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=32&resultType=json`)
+        const fesFiltertApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=32&resultType=json`)
 
 
 
@@ -73,7 +73,7 @@ function getNearByFes(item) {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const NearByFesApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&resultType=json&pageNo=1&numOfRows=32`);
+        const NearByFesApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&resultType=json&pageNo=1&numOfRows=32`);
         // 맛집 주변 축제 필터 변수
         let nearbyfesList = await NearByFesApi.data.getFestivalKr.item.filter((festival) => festival.GUGUN_NM.includes(item.GUGUN_NM));
 

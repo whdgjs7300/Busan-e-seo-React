@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D"
+const API_KEY=process.env.REACT_APP_API_KEY
 
 
 
@@ -11,8 +11,8 @@ function getHomeData() {
         try {
             dispach({type : "GET_HOMEPAGEDATA_REQUEST" })
         
-        const festivalBannerListApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json`)
-        const retaurantCardListApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=10&resultType=json`)
+        const festivalBannerListApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=10&resultType=json`)
+        const retaurantCardListApi = axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=10&resultType=json`)
 
         let [festivalBannerList, retaurantCardList] = await Promise.all([festivalBannerListApi, retaurantCardListApi])
 

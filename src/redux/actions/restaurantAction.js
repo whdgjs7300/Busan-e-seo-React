@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-const KEY ="9V%2BSdKNbzQD7oIQPHdDdlKZz0%2BPj1gnzDGKeS%2B8GWk2LHpSkDx5Ig%2F7u6wKopPZEf9brLck%2Bz3z81NapmasU%2Fg%3D%3D"
-
-
+const API_KEY=process.env.REACT_APP_API_KEY
 
 // Restaurant 페이지 - 페이지 네이션
 // 페이지별 데이터 출력 함수
@@ -12,7 +10,7 @@ function getRestaurantParam(pageNum) {
         try {
             dispach({type : "GET_RESTAURANT_REQUEST" })
 
-        const restaurantApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&resultType=json&pageNo=${pageNum}&numOfRows=10`)
+        const restaurantApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${API_KEY}&resultType=json&pageNo=${pageNum}&numOfRows=10`)
 
 
         let restaurantList = restaurantApi.data.getFoodKr
@@ -40,7 +38,7 @@ function getResFilter(gu) {
         try {
             dispach({type : "GET_RESTAURANT_REQUEST" })
 
-        const resFiltertApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=271&resultType=json`)
+        const resFiltertApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=271&resultType=json`)
 
         let resFilterList = await resFiltertApi.data.getFoodKr.item.
         filter((item) => item.GUGUN_NM === gu);
@@ -69,7 +67,7 @@ function getNearByRes(item) {
         try {
             dispach({type : "GET_FESTIVAL_REQUEST" })
 
-        const NearByResApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${KEY}&pageNo=1&numOfRows=271&resultType=json`);
+        const NearByResApi = await axios.get(`https://apis.data.go.kr/6260000/FoodService/getFoodKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=271&resultType=json`);
 
         let nearbyresList = await NearByResApi.data.getFoodKr.item.filter((restaurant) => restaurant.GUGUN_NM.includes(item.GUGUN_NM));
         

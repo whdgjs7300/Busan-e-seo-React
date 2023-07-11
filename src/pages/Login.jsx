@@ -8,7 +8,7 @@ const Login = () => {
     const [typingEmail, setTypingEmail] = useState();
     const [typingPassword, setTypingPassword] = useState();
     const [userData, setUserData] = useState(null)
-    const [errorMsg, setErrorMsg] = useState("　");
+    const [errorMsg, setErrorMsg] = useState("");
     const navigate = useNavigate();
 
 

@@ -1,13 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
 import '../CSS/Nav.css';
-import { useSelector } from 'react-redux';
 
 
 
 const HomeNav = () => {
 
-    const {isLoggedin} = useSelector(state=>state.user)
-    console.log(isLoggedin)
+
 
     
 
