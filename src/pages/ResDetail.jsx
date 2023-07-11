@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import { detailAction } from "../redux/actions/detailAction";
 import DetailInfo from "../components/DetailInfo";
-import DetailInfo2 from "../components/DetailInfo2";
+import MoreInfo from "../components/MoreInfo";
 import Weather from "../components/Weather";
 import Guide from "../components/Guide";
 import Map from "../components/Map";
@@ -83,7 +83,7 @@ const ResDetail = () => {
 
                 <div style={{marginBottom : "50px"}}>
                 {/* 컴포넌트 조건부 렌더링 */}
-                {activeComponent === "상세정보" && <DetailInfo2 item={resDetailList} />}
+                {activeComponent === "상세정보" && <MoreInfo item={resDetailList} />}
                 {activeComponent === "지도/주변축제" && <Map  item={resDetailList}/>}
                 {activeComponent === "주변날씨" && <Weather lat={resDetailList.LAT} lon={resDetailList.LNG} item={resDetailList}/>}
                 {activeComponent === "이용안내" && <Guide item={resDetailList}/>}

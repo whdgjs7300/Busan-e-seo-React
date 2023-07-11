@@ -60,6 +60,7 @@ function App() {
         <Route path='/fessearch' element={<FesSearch/>}></Route>
         <Route path='/ressearch' element={<ResSearch/>}></Route>
       </Routes>
+      
       <Footer/>
     </div>
   );
