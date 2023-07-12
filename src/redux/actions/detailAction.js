@@ -10,7 +10,7 @@ function getFesDetail(id,) {
         try {
             dispatch({type : "GET_FESDETAIL_REQUEST" })
 
-        const fesDetailApi = await axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=10&resultType=json&UC_SEQ=${id}`);
+        const fesDetailApi = await axios.get(`https://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=10&resultType=json&UC_SEQ=${id}`);
 
 
         const fesDetailList = fesDetailApi.data.getFestivalKr.item[0];

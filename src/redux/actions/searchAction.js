@@ -9,7 +9,7 @@ function getFesSearch(keyWord) {
         try {
             dispach({type : "GET_SEARCH_REQUEST" })
 
-        const fesSearchApi = axios.get(`http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=32&resultType=json`);
+        const fesSearchApi = axios.get(`https://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${API_KEY}&pageNo=1&numOfRows=32&resultType=json`);
 
         let [fesSearchList] = await Promise.all([fesSearchApi,])
 
