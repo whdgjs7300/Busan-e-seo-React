@@ -51,13 +51,13 @@ const Festivals = () => {
         };
         
     
-    
+
     return ( 
         <div className="fes_container">
             <div 
             className="res_banner"
         style={{backgroundImage:
-            'url('+`https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/wlQ/image/slHVPdKzC543SqANTzqvqYUAqZg`+')',   
+            'url('+`https://www.mcst.go.kr/attachFiles/cultureInfoCourt/localFestival/notifyFestival/1265176298940.JPG`+')',   
             
             }}>
             <div className="month_btn_box">

@@ -15,7 +15,6 @@ const FesCard = ({item}) => {
             display : "flex",
             flexDirection : "column",
             justifyContent : "space-between",
-            
             cursor : "pointer",
             }}>
             <Card.Img 

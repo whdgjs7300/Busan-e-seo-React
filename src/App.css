@@ -9,9 +9,10 @@ a {
 
 .fes_container {
     
-    height: 100%;
+
     display: flex;
     width: 100%;
+    
 }
 
 
@@ -84,6 +85,7 @@ a {
 }
 
 .month_btn_box {
+    
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -106,13 +108,12 @@ a {
 
 .res_banner {
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: 100% 100% 100% 100% ;
     width: 100%;
-    height: 100%;
     
     
-    
+
 }
 
 .card_Box {
