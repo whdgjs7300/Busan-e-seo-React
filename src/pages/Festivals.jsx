@@ -38,7 +38,7 @@ const Festivals = () => {
         
     },[pageNum, clickedBtn])
     
-    // console.log(festivalList?.item[2].USAGE_DAY_WEEK_AND_TIME.split("")[6])
+
     
     const handleClick = (item) => {
             if (item === clickedBtn) {
@@ -49,15 +49,15 @@ const Festivals = () => {
             dispatch(festivalAction.getFesFilter(item))
             }
         };
-        console.log(fesfilterList)
-
+        
+    
     
     return ( 
         <div className="fes_container">
             <div 
             className="res_banner"
         style={{backgroundImage:
-            'url('+`https://cdn.topstarnews.net/news/photo/first/201710/img_319449_1.jpg`+')',   
+            'url('+`https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/wlQ/image/slHVPdKzC543SqANTzqvqYUAqZg`+')',   
             
             }}>
             <div className="month_btn_box">

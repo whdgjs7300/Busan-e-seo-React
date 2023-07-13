@@ -8,6 +8,7 @@ a {
 }
 
 .fes_container {
+    
     height: 100%;
     display: flex;
     width: 100%;
@@ -64,6 +65,8 @@ a {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px;
+    
+    
 }
 
 .gu_btn_box div {
@@ -85,6 +88,7 @@ a {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px;
+    background-color: black;
 }
 .month_btn_box div {
     padding: 20px 24px;

@@ -20,7 +20,6 @@ import ResSearch from './pages/ResSearch';
 
 function App() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const isLoggedIn = localStorage.getItem('isLoggedIn');
 
