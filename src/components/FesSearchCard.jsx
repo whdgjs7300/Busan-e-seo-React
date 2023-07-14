@@ -7,7 +7,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 
 const FesSearchCard = ({item, keyWord, loading}) => {
-    console.log(item)
+
     const navigate = useNavigate();
 
     const StyledCard = styled(Card)`
