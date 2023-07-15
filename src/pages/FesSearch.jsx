@@ -17,8 +17,7 @@ const FesSearch = () => {
         setSearchOn(true);
         setKeyWord(searchText)
         dispatch(searchAction.getFesSearch(keyWord))
-        
-        console.log('Search Text:', searchText);
+
     };
     useEffect(()=>{
         dispatch(searchAction.getFesSearch(keyWord))
@@ -40,9 +39,7 @@ const FesSearch = () => {
                     <button >검색</button>
                 </form>
                 {
-                    searchOn ? <FesSearchCard loading={loading} keyWord={keyWord} item={fesSearchList}/> :<div >
-                        
-                    </div>
+                    searchOn ? <FesSearchCard loading={loading} keyWord={keyWord} item={fesSearchList}/> : null
                 }
                 
                 </div>

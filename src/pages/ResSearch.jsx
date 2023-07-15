@@ -17,8 +17,6 @@ const ResSearch = () => {
         setSearchOn(true);
         setKeyWord(searchText)
         dispatch(searchAction.getResSearch(keyWord))
-        
-        console.log('Search Text:', searchText);
     };
 
     
@@ -44,9 +42,7 @@ const ResSearch = () => {
                 </form>
                 
                 {
-                    searchOn ? <ResSearchCard loading={loading} keyWord={keyWord} item={resSearchList}/> :<div >
-                        
-                    </div>
+                    searchOn ? <ResSearchCard loading={loading} keyWord={keyWord} item={resSearchList}/> : null
                 }
                 </div>
             
