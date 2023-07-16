@@ -19,9 +19,7 @@ const Footer = () => {
                         <p style={{color : "#FFA500", fontWeight : "700"}}>박종헌 </p>
                         <p style={{color : "#FFA500", fontWeight : "700"}}>010-4133-1692</p>
                         <p>서울특별시 관악구 봉천동 26-26</p>
-                        <p>{ // 깃,페이스북, 네이버 등 아이콘 
-                            
-                            }</p>
+                        
                     </div>
                     
             </div>
@@ -33,16 +31,20 @@ const Footer = () => {
                         {// 이미지와 설명
                     }
 
-                        <a href="">
-                            <img src="" alt="" />
+                        <a target="blank" href="https://github.com/whdgjs7300">
+                            <img className="site_img"
+                            src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="" />
                         </a>
-                        <p style={{color : "#FFA500", fontWeight : "700"}}>https://github.com/whdgjs7300</p>
-                        <a href="">
-                            <img src="" alt="" />
+                        {/* 네이버 대신 노션주소써야함 ! */}
+                        <p >https://github.com/whdgjs7300</p>
+                        <a target="blank" href="https://mail.naver.com">
+                            <img className="site_img"
+                            src="https://clova-phinf.pstatic.net/MjAxODAzMjlfOTIg/MDAxNTIyMjg3MzM3OTAy.WkiZikYhauL1hnpLWmCUBJvKjr6xnkmzP99rZPFXVwgg.mNH66A47eL0Mf8G34mPlwBFKP0nZBf2ZJn5D4Rvs8Vwg.PNG/image.png" alt="" />
                         </a>
-                        <p>whdgjs7300@naver.com</p>
-                        <a href="">
-                            <img src="" alt="" />
+                        <p >whdgjs7300@naver.com</p>
+                        <a target="blank" href="https://www.instagram.com/pxxheony_/">
+                            <img className="site_img"
+                            src="https://i.namu.wiki/i/PpCUHjc8PoAlAWoSip-m3KtgYMq7Ft1sI2BiCioMrclYCFdnjCEVKdPyXJ3yqXgHjgboqOp-8Q9z71WTisQy_A.svg" alt="" />
                         </a>
                         <p>https://www.instagram.com/pxxheony_/ </p>
                     
