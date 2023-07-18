@@ -12,8 +12,8 @@ const { kakao } = window;
 const Map = ({item}) => {
 
     const dispatch = useDispatch();
-    const {nearbyfesList, fesloading} = useSelector((state)=>state.festival)
-    const {nearbyresList, resloading } = useSelector((state)=>state.restaurant)
+    const {nearbyfesList} = useSelector((state)=>state.festival)
+    const {nearbyresList} = useSelector((state)=>state.restaurant)
 
     // 비동기 데이터 호출
     useEffect(()=>{
