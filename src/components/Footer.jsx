@@ -37,11 +37,11 @@ const Footer = () => {
                         </a>
                         {/* 네이버 대신 노션주소써야함 ! */}
                         <p >https://github.com/whdgjs7300</p>
-                        <a target="blank" href="https://mail.naver.com">
+                        <a target="blank" href="https://jongheons.notion.site/e893f255eea74ec68869fb038c04ef77?pvs=4">
                             <img className="site_img"
-                            src="https://clova-phinf.pstatic.net/MjAxODAzMjlfOTIg/MDAxNTIyMjg3MzM3OTAy.WkiZikYhauL1hnpLWmCUBJvKjr6xnkmzP99rZPFXVwgg.mNH66A47eL0Mf8G34mPlwBFKP0nZBf2ZJn5D4Rvs8Vwg.PNG/image.png" alt="" />
+                            src="https://imghub.insilicogen.com/media/photos/lbj_notion_0.png" alt="" />
                         </a>
-                        <p >whdgjs7300@naver.com</p>
+                        <p >https://jongheons.notion.site</p>
                         <a target="blank" href="https://www.instagram.com/pxxheony_/">
                             <img className="site_img"
                             src="https://i.namu.wiki/i/PpCUHjc8PoAlAWoSip-m3KtgYMq7Ft1sI2BiCioMrclYCFdnjCEVKdPyXJ3yqXgHjgboqOp-8Q9z71WTisQy_A.svg" alt="" />

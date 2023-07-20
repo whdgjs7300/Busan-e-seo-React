@@ -9,7 +9,6 @@ import FestivalNav from './components/FestivalNav';
 import Restaurant from './pages/Restaurant';
 import Footer from './components/Footer';
 import titleIcon from "./Images/titleIcon.png";
-import { useDispatch} from 'react-redux';
 import FesPrivateRoute from './Routers/FesPrivateRoute';
 import ResPrivateRoute from './Routers/ResPrivateRoute';
 import LoginPrivateRoute from './Routers/LoginPrivateRoute';
@@ -22,11 +21,6 @@ function App() {
   const navigate = useNavigate();
 
   const isLoggedIn = localStorage.getItem('isLoggedIn');
-
-
-
-    
-
 
   return (
     <div 
