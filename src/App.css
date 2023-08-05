@@ -25,6 +25,17 @@ a {
     display: flex;
     align-items: center;
     justify-content: end;
+    position: relative; /* Add this line */
+}
+
+.banner_image {
+    width: 100%; /* Add this line */
+    height: 100%; /* Add this line */
+    object-fit: cover; /* Add this line */
+    position: absolute; /* Add this line */
+    top: 0; /* Add this line */
+    left: 0; /* Add this line */
+    z-index: -1; /* Add this line */
 }
 
 .banner_info{
@@ -38,6 +49,8 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative; /* Add this line */
+    z-index: 1; /* Add this line */
 }
 .banner_info h2,h5 {
     text-align: center;

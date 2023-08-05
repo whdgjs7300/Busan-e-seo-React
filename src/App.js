@@ -1,21 +1,23 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import React, { lazy, Suspense } from 'react'; 
 import {  Routes, Route, useNavigate } from 'react-router-dom';
-import Home from './pages/Home';
-import SignUp from './pages/SignUp';
 import HomeNav from './components/HomeNav';
-import Festivals from './pages/Festivals';
 import FestivalNav from './components/FestivalNav';
-import Restaurant from './pages/Restaurant';
 import Footer from './components/Footer';
 import titleIcon from "./Images/titleIcon.png";
-import FesPrivateRoute from './Routers/FesPrivateRoute';
-import ResPrivateRoute from './Routers/ResPrivateRoute';
-import LoginPrivateRoute from './Routers/LoginPrivateRoute';
 import LoginNav from './components/LoginNav';
 import FesSearch from './pages/FesSearch';
 import ResSearch from './pages/ResSearch';
 
+// Lazy Loading
+const Home = lazy(() => import('./pages/Home'));
+const Festivals = lazy(() => import('./pages/Festivals'));
+const FesPrivateRoute = lazy(() => import('./Routers/FesPrivateRoute'));
+const Restaurant = lazy(() => import('./pages/Restaurant'));
+const ResPrivateRoute = lazy(() => import('./Routers/ResPrivateRoute'));
+const LoginPrivateRoute = lazy(() => import('./Routers/LoginPrivateRoute'));
+const SignUp = lazy(() => import('./pages/SignUp'));
 
 function App() {
   const navigate = useNavigate();
