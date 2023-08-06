@@ -21,7 +21,7 @@ const FesDetail = () => {
 
     useEffect(()=>{        
             dispatch(detailAction.getFesDetail(id))        
-    },[])
+    },[dispatch, id])
 
     const handleItemClick = (item) => {
         setActiveComponent(item);
@@ -61,9 +61,7 @@ const FesDetail = () => {
             </div>
             
             <div className="detail_img_box"
-                style={{backgroundImage:
-                    'url('+`${fesDetailList.MAIN_IMG_NORMAL
-                    }`+')',   
+                style={{backgroundImage: `url(${fesDetailList.MAIN_IMG_NORMAL})`
                     }}>               
             </div>
 

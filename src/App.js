@@ -9,9 +9,12 @@ import titleIcon from "./Images/titleIcon.png";
 import LoginNav from './components/LoginNav';
 import FesSearch from './pages/FesSearch';
 import ResSearch from './pages/ResSearch';
+import ClipLoader from "react-spinners/ClipLoader";
+import Home from './pages/Home';
+
 
 // Lazy Loading
-const Home = lazy(() => import('./pages/Home'));
+
 const Festivals = lazy(() => import('./pages/Festivals'));
 const FesPrivateRoute = lazy(() => import('./Routers/FesPrivateRoute'));
 const Restaurant = lazy(() => import('./pages/Restaurant'));
@@ -44,6 +47,7 @@ function App() {
       }
         
       <FestivalNav/>
+      <Suspense fallback={<ClipLoader/>}>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/festivals' element={<Festivals/>}></Route>
@@ -55,6 +59,8 @@ function App() {
         <Route path='/fessearch' element={<FesSearch/>}></Route>
         <Route path='/ressearch' element={<ResSearch/>}></Route>
       </Routes>
+      </Suspense>
+      
       
       <Footer/>
     </div>

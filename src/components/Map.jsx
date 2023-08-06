@@ -63,17 +63,9 @@ const Map = ({item}) => {
                 height: '500px',
                 margin: "auto"
                 }}>
+            </div>                
+                    <MapCard  item={item.RPRSNTV_MENU ? nearbyfesList : nearbyresList} />             
             </div>
-                
-                    <MapCard  item={item.RPRSNTV_MENU ? nearbyfesList : nearbyresList} /> 
-                    
-                
-                    
-            
-
-            
-
-        </div>
         
     );
 }
