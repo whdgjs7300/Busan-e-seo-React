@@ -11,14 +11,14 @@ import FesSearch from './pages/FesSearch';
 import ResSearch from './pages/ResSearch';
 import ClipLoader from "react-spinners/ClipLoader";
 import Home from './pages/Home';
+import ResPrivateRoute from './Routers/ResPrivateRoute';
+import FesPrivateRoute from './Routers/FesPrivateRoute';
 
 
 // Lazy Loading
 
 const Festivals = lazy(() => import('./pages/Festivals'));
-const FesPrivateRoute = lazy(() => import('./Routers/FesPrivateRoute'));
 const Restaurant = lazy(() => import('./pages/Restaurant'));
-const ResPrivateRoute = lazy(() => import('./Routers/ResPrivateRoute'));
 const LoginPrivateRoute = lazy(() => import('./Routers/LoginPrivateRoute'));
 const SignUp = lazy(() => import('./pages/SignUp'));
 

@@ -34,7 +34,6 @@ const Weather = ({lat, lon , item}) => {
     useEffect(()=>{
         getWeather(lat, lon);
     },[])
-    console.log(weather)
     return ( 
         
         <div className="weather_container">
