@@ -1,13 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
 import { useState } from 'react';
-import { useNavigate, Link} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import '../CSS/Nav.css';
 
 const FestivalNav = () => {
 
-    // 햄버거 토글 버튼
-    const [showMenu, setShowMenu] = useState(false);
     // 사이드 nav 토글 버튼
     const [showSublist, setShowSublist] = useState(false);
     const navigate = useNavigate();

@@ -5,12 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import ClipLoader from "react-spinners/ClipLoader";
 
-
-const FesSearchCard = ({item, keyWord, loading}) => {
-
-    const navigate = useNavigate();
-
-    const StyledCard = styled(Card)`
+const StyledCard = styled(Card)`
     /* 다른 컴포넌트에 영향을 주지 않고 카드 스타일을 지정할 수 있음 */
     &:hover {
         background-color: #FFA500;
@@ -19,6 +14,12 @@ const FesSearchCard = ({item, keyWord, loading}) => {
     }
 
 `;
+
+const FesSearchCard = ({item, keyWord, loading}) => {
+
+    const navigate = useNavigate();
+
+    
 
 
 if(loading){

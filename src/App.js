@@ -32,15 +32,9 @@ function App() {
     className="App">
       <div 
       onClick={()=>navigate('/')}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        zIndex: 1,
-        cursor : "pointer",
-      }}>
+      className='icon_box'>
       <img className='main_icon'
-      src={titleIcon} alt="" />
+      src={titleIcon} alt="mainIcon" />
       </div>
       {
         isLoggedIn === "true" ? <LoginNav/> : <HomeNav/>

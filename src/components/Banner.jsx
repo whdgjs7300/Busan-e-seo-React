@@ -1,7 +1,6 @@
 const Banner = ({ item }) => {
     // https로 바꾸는 코드 (성능 최적화)
     // 배너 이미지 lazy - loading 적용 (이미지 최적화)
-    // 
 
     const httpsImageUrl = item.MAIN_IMG_NORMAL.replace(/^http:/, 'https:');
 

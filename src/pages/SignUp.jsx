@@ -25,7 +25,7 @@ const register = async () => {
         setRegisterEmail("");
         setRegisterPassword("");
         navigate('/login')
-        console.log(createdUser);
+        
         
         
         } catch(err){

@@ -10,6 +10,24 @@ import Guide from "../components/Guide";
 import Map from "../components/Map";
 
 
+// 기본 버튼 스타일
+const buttonStyles = {
+
+    padding: "10px 20px",
+    border: "none",
+    background: "transparent",
+    cursor: "pointer",
+    borderBottom: "1px solid black",
+    fontWeight: "600",
+    fontSize : "20px"
+};
+// 클릭 버튼 스타일
+const activeButtonStyles = {
+    ...buttonStyles,
+    color : "#FFA500",
+    borderBottom: "3px solid #FFA500",
+    
+};
 
 const FesDetail = () => {
     const {fesDetailList, loading,} = useSelector(state=>state.fesDetail)
@@ -26,24 +44,7 @@ const FesDetail = () => {
     const handleItemClick = (item) => {
         setActiveComponent(item);
     };
-    // 기본 버튼 스타일
-    const buttonStyles = {
-
-        padding: "10px 20px",
-        border: "none",
-        background: "transparent",
-        cursor: "pointer",
-        borderBottom: "1px solid black",
-        fontWeight: "600",
-        fontSize : "20px"
-    };
-    // 클릭 버튼 스타일
-    const activeButtonStyles = {
-        ...buttonStyles,
-        color : "#FFA500",
-        borderBottom: "3px solid #FFA500",
-        
-    };
+    
 
 
     if(loading){
@@ -71,8 +72,6 @@ const FesDetail = () => {
                     detailNav.map((item,i)=>{
                         return <button key={i} style={activeComponent === item ? activeButtonStyles : buttonStyles}
                         onClick={()=>handleItemClick(item)}>{item}</button>
-
-
                     })
                 }
                 </div>

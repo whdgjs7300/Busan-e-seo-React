@@ -49,10 +49,8 @@ const Login = () => {
         const provider = new GoogleAuthProvider(); // provider 구글 설정
             signInWithPopup(firebaseAuth , provider) // 팝업창 띄워서 로그인
             .then((data) => {
-                setUserData(data.user); // user data 설정 - 리덕스로 전역관리
-                console.log(data); // console에 UserCredentialImpl 출력
-                // 로그인 상태를 로컬 스토리지에 저장
-                localStorage.setItem('isLoggedIn', 'true');
+            // 로그인 상태를 로컬 스토리지에 저장
+            localStorage.setItem('isLoggedIn', 'true');
                             // 유저 이름 로컬 스토리지 저장
             localStorage.setItem('userName', data.user.displayName);
                 navigate('/')

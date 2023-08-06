@@ -10,22 +10,6 @@ import Guide from "../components/Guide";
 import Map from "../components/Map";
 
 
-
-const ResDetail = () => {
-    const {resDetailList, loading, } = useSelector(state=>state.resDetail)
-    const dispatch = useDispatch();
-    const {id} = useParams();
-
-    const [activeComponent, setActiveComponent] = useState("상세정보");
-    const detailNav = ["상세정보", "지도/주변축제", "주변날씨", "이용안내" ]
-
-    useEffect(()=>{        
-            dispatch(detailAction.getResDetail(id))
-    },[])
-
-    const handleItemClick = (item) => {
-        setActiveComponent(item);
-    };
     // 기본 버튼 스타일
     const buttonStyles = {
 
@@ -44,6 +28,23 @@ const ResDetail = () => {
         borderBottom: "3px solid #FFA500",
         
     };
+
+const ResDetail = () => {
+    const {resDetailList, loading, } = useSelector(state=>state.resDetail)
+    const dispatch = useDispatch();
+    const {id} = useParams();
+
+    const [activeComponent, setActiveComponent] = useState("상세정보");
+    const detailNav = ["상세정보", "지도/주변축제", "주변날씨", "이용안내" ]
+
+    useEffect(()=>{        
+            dispatch(detailAction.getResDetail(id))
+    },[])
+
+    const handleItemClick = (item) => {
+        setActiveComponent(item);
+    };
+
 
 
     if(loading){
