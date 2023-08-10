@@ -37,7 +37,7 @@ const resizeImage = (url, width, height) => {
             <Row style={{margin: "20px"}} xs={1} md={2} className="g-4">
             {item?.map((src, idx) => (
                 <Col  key={idx}>
-                    <StyledCard style={{margin : "auto" ,cursor:"pointer", width: "100%", maxWidth: "300px", height: "200px"}}
+                    <StyledCard style={{margin : "auto" ,marginBottom :"20px" ,cursor:"pointer", width: "100%", maxWidth: "300px", height: "200px"}}
                         onClick={()=>navigete(`/restaurant/${src.UC_SEQ}`)} >
                         <Card.Img 
                         style={{height:"100%" , width:"100%", objectFit: "cover" }}
